@@ -656,6 +656,18 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 .biglietto .da::before{content:'';width:6px;height:6px;background:currentColor;transform:rotate(45deg);flex:none;}
 .biglietto h3{font-size:21px;line-height:1.25;margin:12px 0 0;}
 .biglietto p{margin-top:9px;font-size:14px;line-height:1.6;color:rgba(253,250,251,.82);}
+/* le tre cose che funzionano davvero, in elenco: un elenco si scorre con
+   l'occhio, un paragrafo va letto — e qui deve capirlo in due secondi */
+.biglietto-cose{list-style:none;margin:12px 0 0;padding:0;}
+.biglietto-cose li{
+  position:relative;padding:5px 0 5px 17px;
+  font-size:13px;line-height:1.5;color:rgba(253,250,251,.78);
+}
+.biglietto-cose li::before{
+  content:'';position:absolute;left:0;top:12px;
+  width:5px;height:5px;background:var(--accento-chiaro);transform:rotate(45deg);
+}
+.biglietto-cose strong{color:var(--avorio);font-weight:700;}
 .biglietto-azioni{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;}
 .biglietto .btn{padding:11px 16px;font-size:11px;letter-spacing:.1em;min-height:44px;}
 .biglietto .btn-chiudi{
@@ -1080,8 +1092,13 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
   <div class="da">Da Fabio</div>
   <h3 id="biglietto-titolo">Samuele, questo è il tuo sito.</h3>
   <p>L'ho preparato con le tue foto e le tue parole, quelle che hai già
-     scritto tu. Guardalo con calma dal telefono: i pulsanti funzionano
-     davvero e scrivono al tuo numero.</p>
+     scritto tu. Aprilo dal telefono o dal computer: è tutto vivo, tasti e
+     collegamenti compresi.</p>
+  <ul class="biglietto-cose">
+    <li><strong>Prenota</strong> e <strong>Chiama</strong> vanno al tuo numero</li>
+    <li><strong>Apri la mappa</strong> porta al tuo studio su Google&nbsp;Maps</li>
+    <li><strong>Instagram</strong> e <strong>Facebook</strong> aprono i tuoi profili</li>
+  </ul>
   <div class="biglietto-azioni">
     <a href="#" class="btn btn-pieno" id="biglietto-wa" hidden>Dimmi che ne pensi</a>
     <button type="button" class="btn btn-chiudi" id="biglietto-chiudi">Ho capito, chiudi</button>
