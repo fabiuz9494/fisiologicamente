@@ -202,6 +202,14 @@ section{position:relative;}
   border:1px solid transparent;
   transition:transform .3s var(--easing),background .3s var(--easing),color .3s var(--easing),border-color .3s var(--easing);
 }
+/* l'icona dentro i tasti. em e non px: cresce col testo del tasto, quindi
+   resta proporzionata sia sul pulsantone dell'apertura sia su quelli piccoli
+   della testata. currentColor: prende da sola il colore della scritta, anche
+   quando il tasto cambia colore al passaggio del mouse. */
+.ico{
+  width:1.15em;height:1.15em;flex:none;
+  fill:currentColor;display:block;
+}
 .btn-pieno{background:var(--accento);color:var(--avorio);}
 .btn-pieno:hover{background:var(--scuro-900);transform:translateY(-2px);}
 .btn-vuoto{background:transparent;border-color:var(--inchiostro);color:var(--inchiostro);}
@@ -265,6 +273,9 @@ section{position:relative;}
 }
 .nav-desktop a:hover::after{transform:scaleX(1);transform-origin:left;}
 .nav-desktop .btn-nav{
+  /* inline-flex: senza, l'icona finiva SOPRA la scritta invece che a fianco —
+     gli altri tasti sono gia' flex, questi no */
+  display:inline-flex;align-items:center;gap:8px;
   border:1px solid var(--accento-chiaro);background:rgba(12,6,14,.45);
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
   padding:11px 20px;font-size:11.5px;letter-spacing:.16em;
@@ -319,7 +330,10 @@ section{position:relative;}
    e sul telefono sfonda lo schermo a destra */
 .hero-content{
   position:relative;z-index:2;width:100%;min-width:0;
-  padding:0 clamp(20px,5vw,64px) clamp(56px,8vw,96px);
+  /* il blocco e' ancorato in basso: tolta la pastiglia sopra il titolo,
+     senza toccare questo il gruppo sarebbe rimasto dov'era lasciando un buco
+     in alto. Piu' respiro sotto = tutto sale di quanto occupava l'etichetta. */
+  padding:0 clamp(20px,5vw,64px) clamp(84px,10vw,146px);
   display:grid;grid-template-columns:minmax(0,1fr);gap:20px;
 }
 .hero h1{font-size:clamp(46px,8.6vw,108px);line-height:1;max-width:13ch;text-shadow:0 3px 26px rgba(10,5,11,.55);}
@@ -393,7 +407,10 @@ section{position:relative;}
 }
 .fascia-scura .wrap{position:relative;}
 .studio{display:grid;grid-template-columns:1fr;gap:38px;align-items:center;}
-@media (min-width:860px){ .studio{grid-template-columns:1.1fr .9fr;gap:clamp(48px,7vw,96px);} }
+/* .85/1.15 e non 1.1/.9: la foto era 457 px contro i 560 delle altre e
+   sembrava un francobollo. Il file ne ha 1452, quindi c'e' margine per
+   mostrarla piu' grande senza che il browser la ingrandisca. */
+@media (min-width:860px){ .studio{grid-template-columns:.85fr 1.15fr;gap:clamp(40px,5vw,72px);} }
 .studio h2{font-size:clamp(32px,4.6vw,56px);line-height:1.06;margin-top:18px;}
 .studio .indirizzo{
   margin-top:22px;font-family:var(--display);font-size:clamp(21px,2.4vw,27px);
@@ -705,8 +722,8 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
     <a href="#percorsi">Cosa faccio</a>
     <a href="#studio">Lo studio</a>
     <a href="#risposte">Risposte</a>
-    <a href="#" class="btn-nav btn-nav-chiaro js-tel">Chiama</a>
-    <a href="#contatti" class="btn-nav js-wa">Prenota</a>
+    <a href="#" class="btn-nav btn-nav-chiaro js-tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-tel"/></svg>Chiama</a>
+    <a href="#contatti" class="btn-nav js-wa"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Prenota</a>
   </nav>
 </header>
 
@@ -722,7 +739,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
     <img class="hero-img" src="img/hero.jpg" alt="Samuele Inguì seduto accanto al lettino nel suo studio ad Asti, con lo scheletro anatomico e la libreria" loading="eager" fetchpriority="high">
   </picture>
   <div class="hero-content">
-    <span class="label label--su-scuro">Osteopatia &middot; Asti</span>
     <!-- "Risolvo in poche sedute" è la sua frase e resta, ma scesa nella riga
          piccola: come titolone suonava fredda, da cartello. Sopra ci va il
          mestiere raccontato per quello che è — un lavoro di mani e di
@@ -733,8 +749,8 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <span>Osteopata, chinesiologo e&nbsp;posturologo. Studio in&nbsp;Via&nbsp;Porta Romana,&nbsp;ad&nbsp;Asti.</span>
     </p>
     <div class="hero-riga">
-      <a href="#contatti" class="btn btn-pieno js-wa">Prenota su WhatsApp</a>
-      <a href="#" class="btn btn-bianco js-tel">Chiama</a>
+      <a href="#contatti" class="btn btn-pieno js-wa"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Prenota su WhatsApp</a>
+      <a href="#" class="btn btn-bianco js-tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-tel"/></svg>Chiama</a>
     </div>
   </div>
 </section>
@@ -804,7 +820,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
         <!-- MODIFICA QUI: durata e prezzo, appena Samuele li dice. -->
         <span>Su appuntamento</span><span>In studio, ad Asti</span>
       </div>
-      <a href="#contatti" class="riga-cta js-wa" data-wa="osteopatia">Prenota una seduta</a>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="osteopatia"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Prenota una seduta</a>
     </div>
   </div>
 
@@ -819,7 +835,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <div class="riga-dettagli">
         <span>Su appuntamento</span><span>In studio, ad Asti</span>
       </div>
-      <a href="#contatti" class="riga-cta js-wa" data-wa="postura">Prenota una valutazione</a>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="postura"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Prenota una valutazione</a>
     </div>
   </div>
 
@@ -834,7 +850,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <div class="riga-dettagli">
         <span>Su appuntamento</span><span>In studio, ad Asti</span>
       </div>
-      <a href="#contatti" class="riga-cta js-wa" data-wa="movimento">Prenota un incontro</a>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="movimento"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Prenota un incontro</a>
     </div>
   </div>
 </section>
@@ -871,7 +887,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
         <p class="indirizzo">Via Porta Romana&nbsp;15<br>14100 Asti</p>
         <p class="sotto">Si&nbsp;viene su&nbsp;appuntamento. Il&nbsp;modo più&nbsp;veloce per&nbsp;prenderlo è&nbsp;un&nbsp;messaggio su&nbsp;WhatsApp: scrivimi due&nbsp;righe&nbsp;e&nbsp;ci&nbsp;sentiamo.</p>
         <div class="studio-azioni">
-          <a href="#contatti" class="btn btn-pieno js-wa">Scrivi su WhatsApp</a>
+          <a href="#contatti" class="btn btn-pieno js-wa"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Scrivi su WhatsApp</a>
           <a href="https://maps.app.goo.gl/1hUwv4FbGWSb4bPD9" target="_blank" rel="noopener" class="btn btn-vuoto">Apri la mappa</a>
         </div>
       </div>
@@ -956,8 +972,8 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
            dedicata, conviene aprirla insieme al dominio (info@...). -->
     </ul>
     <div class="contatti-cta">
-      <a href="#" class="btn btn-pieno js-wa">Scrivi su WhatsApp</a>
-      <a href="#" class="btn btn-vuoto js-tel">Chiama</a>
+      <a href="#" class="btn btn-pieno js-wa"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>Scrivi su WhatsApp</a>
+      <a href="#" class="btn btn-vuoto js-tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-tel"/></svg>Chiama</a>
     </div>
   </div>
 </section>
@@ -997,10 +1013,10 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 
 <!-- ============ BARRA FISSA (solo telefono) ============ -->
 <div class="barra-mobile">
-  <a href="#" class="btn btn-secondo js-tel">Chiama</a>
+  <a href="#" class="btn btn-secondo js-tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-tel"/></svg>Chiama</a>
   <!-- scritta corta: su un telefono da 390px questo pulsante ha 170px
        scarsi, e "Scrivi su WhatsApp" ci finisce tagliato -->
-  <a href="#" class="btn btn-primo js-wa">WhatsApp</a>
+  <a href="#" class="btn btn-primo js-wa"><svg class="ico" aria-hidden="true" focusable="false"><use href="#ico-wa"/></svg>WhatsApp</a>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -1074,6 +1090,18 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 })();
 </script>
 
+
+<!-- Le due icone dei tasti, disegnate una volta sola e richiamate con <use>.
+     Solo tracciati, nessun testo: non finiscono nel testo della pagina.
+     Il marchio di WhatsApp e' quello ufficiale — non si ridisegna a mano. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ico-tel" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.28-.28.68-.36 1.02-.25 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </symbol>
+  <symbol id="ico-wa" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </symbol>
+</svg>
 
 </body>
 </html>
