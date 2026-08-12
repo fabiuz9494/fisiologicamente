@@ -160,8 +160,8 @@ section{position:relative;}
   display:inline-flex;align-items:center;gap:10px;
 }
 .label::before{
-  content:'';width:7px;height:7px;flex:none;
-  background:currentColor;transform:rotate(45deg);
+  content:'';width:9px;height:8px;flex:none;
+  background:currentColor;clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);
 }
 /* sopra una foto il colore da solo non basta mai: serve la pastiglia scura.
    width:max-content e justify-self: dentro una griglia un inline-flex si
@@ -394,7 +394,7 @@ section{position:relative;}
 .titoli li:last-child{border-bottom:1px solid var(--bordo);}
 .titoli li::before{
   content:'';position:absolute;left:0;top:21px;
-  width:5px;height:5px;background:var(--accento);transform:rotate(45deg);
+  width:8px;height:7px;background:var(--accento);clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);
 }
 .titoli strong{font-family:var(--display);font-size:19px;font-weight:600;display:block;}
 .titoli span{color:var(--inchiostro-soft);font-size:15px;}
@@ -467,9 +467,16 @@ section{position:relative;}
   .riga.inversa .riga-foto{justify-self:end;}
 }
 .riga-info{display:flex;flex-direction:column;justify-content:center;padding:48px clamp(20px,4vw,32px);}
-.riga-numero{font-family:var(--display);font-size:15px;color:var(--accento);display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.riga-numero::before{content:'';width:7px;height:7px;background:currentColor;transform:rotate(45deg);}
-.riga-info h3{font-size:clamp(29px,3.4vw,40px);}
+/* il triangolo passa accanto al titolo: i numeri 01/02/03 non c'erano per
+   dire qualcosa, e toglierli fa salire tutto il blocco */
+.riga-info h3{
+  font-size:clamp(29px,3.4vw,40px);
+  display:flex;align-items:center;gap:15px;
+}
+.riga-info h3::before{
+  content:'';flex:none;width:13px;height:11px;background:var(--accento);
+  clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);
+}
 .riga-info .desc{margin-top:16px;font-size:15.5px;color:var(--inchiostro-soft);max-width:48ch;}
 .riga-dettagli{display:flex;flex-wrap:wrap;margin-top:26px;border-top:1px solid var(--bordo);}
 .riga-dettagli span{
@@ -527,11 +534,11 @@ section{position:relative;}
 }
 .risposte summary::-webkit-details-marker{display:none;}
 .risposte summary::before{
-  content:'';flex:none;width:7px;height:7px;margin-top:11px;
-  background:var(--accento);transform:rotate(45deg);
+  content:'';flex:none;width:10px;height:9px;margin-top:11px;
+  background:var(--accento);clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);
   transition:transform .35s var(--easing);
 }
-.risposte details[open] summary::before{transform:rotate(225deg);}
+.risposte details[open] summary::before{transform:rotate(180deg);}
 .risposte .risposta{padding:0 0 24px 23px;font-size:16px;color:var(--inchiostro-soft);max-width:62ch;}
 
 /* ---- il marchio in filigrana ----
@@ -670,7 +677,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
   color:var(--accento-chiaro);font-weight:700;
   display:flex;align-items:center;gap:9px;
 }
-.biglietto .da::before{content:'';width:6px;height:6px;background:currentColor;transform:rotate(45deg);flex:none;}
+.biglietto .da::before{content:'';width:8px;height:7px;background:currentColor;clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);flex:none;}
 .biglietto h3{font-size:21px;line-height:1.25;margin:12px 0 0;}
 .biglietto p{margin-top:9px;font-size:14px;line-height:1.6;color:rgba(253,250,251,.82);}
 /* le tre cose che funzionano davvero, in elenco: un elenco si scorre con
@@ -682,7 +689,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 }
 .biglietto-cose li::before{
   content:'';position:absolute;left:0;top:12px;
-  width:5px;height:5px;background:var(--accento-chiaro);transform:rotate(45deg);
+  width:7px;height:6px;background:var(--accento-chiaro);clip-path:polygon(50% 0,100% 100%,0 100%);-webkit-clip-path:polygon(50% 0,100% 100%,0 100%);
 }
 .biglietto-cose strong{color:var(--avorio);font-weight:700;}
 .biglietto-azioni{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;}
@@ -895,7 +902,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <img class="verso-alto" src="img/servizio-1.jpg" alt="Samuele Inguì seduto accanto al lettino, con un modello anatomico del cranio" loading="lazy">
     </div>
     <div class="riga-info">
-      <div class="riga-numero">01</div>
       <h3>Osteopatia</h3>
       <p class="desc">Le&nbsp;mani sulle articolazioni, sui&nbsp;muscoli e&nbsp;sugli organi. È&nbsp;il&nbsp;lavoro su&nbsp;cui&nbsp;costruisco il&nbsp;resto: dolori posturali, muscolari&nbsp;e&nbsp;viscerali.</p>
       <div class="riga-dettagli">
@@ -911,7 +917,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <img src="img/servizio-2.jpg" alt="Samuele Inguì accanto allo scheletro anatomico del suo studio" loading="lazy">
     </div>
     <div class="riga-info">
-      <div class="riga-numero">02</div>
       <h3>Postura</h3>
       <p class="desc">Come stai in&nbsp;piedi, come stai seduto, come dormi. Molti dolori che&nbsp;tornano sempre uguali hanno qui&nbsp;la&nbsp;loro&nbsp;spiegazione.</p>
       <div class="riga-dettagli">
@@ -926,7 +931,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <img class="verso-basso" src="img/servizio-3.jpg" alt="Samuele Inguì in tuta, seduto a bordo pista in un campo di atletica" loading="lazy">
     </div>
     <div class="riga-info">
-      <div class="riga-numero">03</div>
       <h3>Movimento</h3>
       <p class="desc">Il&nbsp;gesto che&nbsp;ripeti mille volte al&nbsp;giorno, al&nbsp;lavoro o&nbsp;nello sport. Rimetterlo a&nbsp;posto è&nbsp;quello che&nbsp;tiene il&nbsp;risultato anche dopo l'ultima&nbsp;seduta.</p>
       <div class="riga-dettagli">
@@ -1117,7 +1121,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
     <li><strong>Instagram</strong> e <strong>Facebook</strong> aprono i tuoi profili</li>
   </ul>
   <div class="biglietto-azioni">
-    <a href="#" class="btn btn-pieno" id="biglietto-wa" hidden>Dimmi che ne pensi</a>
     <button type="button" class="btn btn-chiudi" id="biglietto-chiudi">Ho capito, chiudi</button>
   </div>
 </aside>
@@ -1193,12 +1196,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
      Niente numeri, niente indirizzo di rete.
      ================================================================== */
   (function presentazione(){
-    /* MODIFICA QUI: il numero di WhatsApp di FABIO (39 + numero, senza
-       spazi), quello a cui Samuele risponde. Lasciandolo vuoto il tasto
-       "Dimmi che ne pensi" resta nascosto e il biglietto funziona lo
-       stesso — ma quel tasto è metà del motivo per cui esiste. */
-    var WA_FABIO = "";
-
     var p;
     try{ p = new URLSearchParams(location.search); }catch(e){ return; }
     var chi = (p.get('p') || '').trim().slice(0, 40);
@@ -1229,14 +1226,6 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
     /* chi ha aperto il link si vede chiamare per nome */
     var nome = chi.charAt(0).toUpperCase() + chi.slice(1);
     document.getElementById('biglietto-titolo').textContent = nome + ', questo è il tuo sito.';
-
-    var tastoWa = document.getElementById('biglietto-wa');
-    if(WA_FABIO){
-      tastoWa.href = 'https://wa.me/' + WA_FABIO + '?text=' +
-        encodeURIComponent('Ciao Fabio, ho visto il sito.\n\n');
-      tastoWa.target = '_blank'; tastoWa.rel = 'noopener';
-      tastoWa.hidden = false;
-    }
 
     /* entra dopo qualche secondo: prima deve vedere il SUO sito, non un
        cartello mio davanti alla porta */
