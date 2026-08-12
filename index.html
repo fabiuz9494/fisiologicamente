@@ -119,7 +119,7 @@
    ==================================================================== */
 *,*::before,*::after{box-sizing:border-box;}
 /* clip e NON hidden: "hidden" spegne position:sticky in tutta la pagina */
-html{scroll-behavior:smooth;overflow-x:clip;}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;}
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
 body{
   margin:0;
@@ -128,9 +128,13 @@ body{
   font-family:var(--testo);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
   overflow-x:clip;
 }
 img{max-width:100%;display:block;}
+/* iOS disegna un rettangolo grigio sopra ogni cosa che si tocca: qui i tasti
+   hanno gia' il loro effetto, e quel lampo grigio fa solo sporco */
+a,button,summary{-webkit-tap-highlight-color:rgba(138,47,109,.12);}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;}
 
@@ -369,7 +373,7 @@ section{position:relative;}
 @media (min-width:860px){ .narrativa{grid-template-columns:1.05fr .95fr;gap:clamp(48px,6vw,90px);} }
 /* il ritratto è 1080x1480, cioè 0.73: tenendo il riquadro vicino alla sua
    forma vera il browser taglia 90 pixel invece di 300 */
-.narrativa-foto{aspect-ratio:.78;overflow:hidden;}
+.narrativa-foto{min-height:420px;aspect-ratio:.78;overflow:hidden;}
 /* sul telefono la foto esce dalle imbottiture e arriva ai due bordi:
    la cornice chiara attorno la faceva sembrare un francobollo */
 @media (max-width:859px){
@@ -437,6 +441,18 @@ section{position:relative;}
    vedeva. Se un giorno arrivano foto più grandi, questo numero si alza. */
 .riga-foto{position:relative;overflow:hidden;min-height:320px;width:100%;}
 .riga-foto img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.6s var(--easing);}
+/* Sul telefono il riquadro diventa ORIZZONTALE (tutta la larghezza per 320
+   di altezza) mentre queste foto sono verticali: il browser ne mostra la
+   fascia centrale, e il centro non e' dove sta il soggetto.
+   Due foto vanno ancorate a mano, e solo qui — sul computer il riquadro ha
+   la forma della foto e il centro va benissimo. */
+@media (max-width:859px){
+  /* la testa era tagliata sopra: si mostra la parte alta */
+  .riga-foto img.verso-alto{object-position:center top;}
+  /* si vedevano i palazzi e lui spariva in fondo: si mostra la parte bassa,
+     dove sta il movimento */
+  .riga-foto img.verso-basso{object-position:center 78%;}
+}
 .riga:hover .riga-foto img{transform:scale(1.045);}
 @media (min-width:860px){
   /* aspect-ratio 0.86 = la forma VERA di queste tre foto (1080x1256 circa).
@@ -444,7 +460,7 @@ section{position:relative;}
      mostrava una fascia centrale e la persona si vedeva a metà. Il riquadro
      prende la forma della foto, non il contrario — se no ogni foto va
      sacrificata per stare dentro un disegno deciso prima di vederla. */
-  .riga-foto{max-width:560px;align-self:center;aspect-ratio:.86;min-height:0;}
+  .riga-foto{max-width:560px;align-self:center;min-height:480px;aspect-ratio:.86;}
   /* la foto resta attaccata al bordo ESTERNO: l'aria si apre verso il testo,
      e non fra la foto e il bordo dello schermo */
   .riga:not(.inversa) .riga-foto{justify-self:start;}
@@ -462,7 +478,8 @@ section{position:relative;}
 }
 .riga-dettagli span:last-child{border-right:0;margin-right:0;}
 .riga-cta{
-  margin-top:24px;display:inline-flex;align-items:center;width:max-content;
+  /* gap: senza, l'icona di WhatsApp restava incollata alla scritta */
+  margin-top:24px;display:inline-flex;align-items:center;gap:9px;width:max-content;
   min-height:44px;padding:13px 26px;
   font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
   border:1px solid var(--inchiostro);transition:background .3s var(--easing),color .3s var(--easing);
@@ -474,7 +491,7 @@ section{position:relative;}
    timida non basta e le scritte spariscono lo stesso */
 /* aspect-ratio invece di un'altezza fissa: con height:600 su schermo largo
    la fascia diventava 2.4:1 e della foto (1.5:1) restava una striscia */
-.full-bleed{position:relative;width:100%;aspect-ratio:1.9;max-height:640px;overflow:hidden;}
+.full-bleed{position:relative;width:100%;min-height:360px;aspect-ratio:1.9;max-height:640px;overflow:hidden;}
 @media (max-width:760px){ .full-bleed{aspect-ratio:1.25;} }
 .full-bleed img{width:100%;height:100%;object-fit:cover;}
 .full-bleed::after{
@@ -875,7 +892,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <!-- MODIFICA QUI: quando capita, una foto di lui che TRATTA davvero —
            le mani su un paziente sul lettino. Fra tutte le foto che mancano
            è quella che vende di più: qui si vede il lettino, non il lavoro. -->
-      <img src="img/servizio-1.jpg" alt="Samuele Inguì seduto accanto al lettino, con un modello anatomico del cranio" loading="lazy">
+      <img class="verso-alto" src="img/servizio-1.jpg" alt="Samuele Inguì seduto accanto al lettino, con un modello anatomico del cranio" loading="lazy">
     </div>
     <div class="riga-info">
       <div class="riga-numero">01</div>
@@ -906,7 +923,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 
   <div class="riga rv">
     <div class="riga-foto">
-      <img src="img/servizio-3.jpg" alt="Samuele Inguì in tuta, seduto a bordo pista in un campo di atletica" loading="lazy">
+      <img class="verso-basso" src="img/servizio-3.jpg" alt="Samuele Inguì in tuta, seduto a bordo pista in un campo di atletica" loading="lazy">
     </div>
     <div class="riga-info">
       <div class="riga-numero">03</div>
@@ -961,7 +978,7 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
              ENTRATA, quindi chi arriva riconosce dove suonare — era la foto
              che mancava. aspect-ratio 1.7 come il file, così non se ne
              taglia via un pezzo. -->
-        <img src="img/studio.jpg" alt="La sala pesi dello studio: il rack, i manubri e la porta d'ingresso a vetri" loading="lazy" style="width:100%;aspect-ratio:1.7;object-fit:cover;">
+        <img src="img/studio.jpg" alt="La sala pesi dello studio: il rack, i manubri e la porta d'ingresso a vetri" loading="lazy" style="width:100%;min-height:240px;aspect-ratio:1.7;object-fit:cover;">
       </div>
     </div>
   </div>
