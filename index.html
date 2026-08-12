@@ -100,6 +100,10 @@
   --avorio:#fdfafb;         /* il bianco caldo: testo sopra le foto */
   --accento:#8a2f6d;        /* magenta SCURO: si legge su fondo chiaro */
   --accento-chiaro:#d492bd; /* magenta CHIARO: solo dentro le fasce scure */
+  /* magenta per le parole SOPRA LE FOTO: più saturo e più carico del chiaro,
+     che sull'immagine si sbiadiva e sembrava grigio-rosa. Resta più aperto
+     dell'accento scuro, che su una foto sparirebbe del tutto. */
+  --accento-foto:#c9569f;
   --inchiostro:#1e141f;
   --inchiostro-soft:#5d4f5c;
   --bordo:rgba(30,20,31,.14);
@@ -319,11 +323,11 @@ section{position:relative;}
   display:grid;grid-template-columns:minmax(0,1fr);gap:20px;
 }
 .hero h1{font-size:clamp(46px,8.6vw,108px);line-height:1;max-width:13ch;text-shadow:0 3px 26px rgba(10,5,11,.55);}
-/* il magenta CHIARO, non quello scuro: sopra una foto il #8a2f6d sparirebbe
-   dentro l'immagine. E l'ombra doppia va tenuta anche qui — una parola
-   colorata su una foto ha bisogno di stacco più di una bianca, non meno. */
+/* il magenta da foto, non quello scuro: sopra un'immagine il #8a2f6d
+   sparirebbe. E l'ombra doppia va tenuta anche qui — una parola colorata su
+   una foto ha bisogno di stacco più di una bianca, non meno. */
 .hero h1 .acc{
-  color:var(--accento-chiaro);
+  color:var(--accento-foto);
   text-shadow:0 1px 4px rgba(8,4,9,.9), 0 3px 26px rgba(8,4,9,.75);
 }
 /* NON flex: dentro un flex il paragrafo prende la larghezza della riga
@@ -465,7 +469,16 @@ section{position:relative;}
   padding:clamp(28px,6vw,64px) clamp(20px,5vw,64px);
   color:var(--avorio);text-shadow:0 1px 4px rgba(10,5,11,.75),0 2px 18px rgba(10,5,11,.6);
 }
-.full-bleed-testo h2{font-size:clamp(28px,4.4vw,52px);max-width:17ch;}
+/* line-height 1.08: senza, questo titolo ereditava l'1.6 del corpo del testo
+   — giusto per un paragrafo, enorme per tre righe di titolone, che restavano
+   staccate come se fossero tre frasi diverse invece di una sola */
+.full-bleed-testo h2{font-size:clamp(28px,4.4vw,52px);line-height:1.08;max-width:17ch;}
+/* le parole in colore sopra la foto vogliono la stessa ombra doppia del
+   bianco: una parola colorata ha bisogno di stacco più di una chiara */
+.full-bleed-testo .acc{
+  color:var(--accento-foto);
+  text-shadow:0 1px 4px rgba(8,4,9,.9), 0 3px 22px rgba(8,4,9,.75);
+}
 .full-bleed-testo p{margin-top:14px;font-size:15px;max-width:50ch;color:rgba(253,250,251,.96);}
 
 /* ---- risposte (le domande frequenti) ---- */
@@ -830,8 +843,13 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
 <div class="full-bleed rv">
   <img src="img/larga.jpg" alt="La stanza dello studio ad Asti: il lettino, i modelli anatomici e la libreria" loading="lazy">
   <div class="full-bleed-testo">
-    <h2>Poche sedute, e&nbsp;ci&nbsp;si&nbsp;rivede solo&nbsp;se&nbsp;serve.</h2>
-    <p>È&nbsp;la&nbsp;promessa con&nbsp;cui&nbsp;Samuele si&nbsp;presenta, ed&nbsp;è&nbsp;anche il&nbsp;modo in&nbsp;cui&nbsp;lavora: il&nbsp;percorso finisce quando il&nbsp;dolore&nbsp;è&nbsp;passato.</p>
+    <!-- "rivede" e "serve" in colore: sono le due parole che disinnescano il
+         timore vero, cioè che diventi un abbonamento a vita. Il resto della
+         frase le accompagna, ma il messaggio è tutto lì. -->
+    <h2>Poche sedute, e&nbsp;ci&nbsp;si&nbsp;<span class="acc">rivede</span> solo&nbsp;se&nbsp;<span class="acc">serve.</span></h2>
+    <!-- prima persona come in tutto il resto del sito: qui parlava di sé in
+         terza, ed era l'unico punto in cui succedeva -->
+    <p>È&nbsp;la&nbsp;promessa con&nbsp;cui&nbsp;mi&nbsp;presento, ed&nbsp;è&nbsp;anche il&nbsp;modo in&nbsp;cui&nbsp;lavoro: il&nbsp;percorso finisce quando il&nbsp;dolore&nbsp;è&nbsp;passato.</p>
   </div>
 </div>
 
