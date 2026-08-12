@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<!--
+  ======================================================================
+  FISIOLOGICAMENTE — Samuele Inguì, osteopata ad Asti
+  ======================================================================
+  ATTENZIONE — QUESTA È UNA PROPOSTA, NON UN SITO APPROVATO.
+  Samuele non ha ancora dato il suo assenso. Finché non lo dà:
+
+    · resta `noindex` (vedi il meta robots qui sotto): fuori da Google;
+    · niente sitemap.xml — una mappa che elenca una pagina `noindex`
+      è dire una cosa e il suo contrario;
+    · non si manda in giro l'indirizzo se non a lui.
+
+  Quando dice di sì: togliere il meta robots, scrivere sitemap.xml,
+  cambiare NOMEDOMINIO.it ovunque, rilanciare il controllo.
+
+  DA DOVE VENGONO I TESTI
+  Nel sito c'è SOLO quello che Samuele ha scritto lui, sui suoi canali
+  pubblici (Linktree, Google, Instagram, Facebook), il 12/08/2026:
+    · "Risolvo in poche sedute dolori posturali, muscolari e viscerali"
+    · "Osteopata | Chinesiologo | Posturologo"
+    · Via Porta Romana 15, Asti — dalla sua scheda Google
+    · WhatsApp 320 366 0511 — dal suo Linktree
+  Tutto il resto è segnato MODIFICA QUI e va chiesto a lui.
+  ======================================================================
+-->
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- FUORI DA GOOGLE finché Samuele non approva. `follow` e non `nofollow`:
+     i collegamenti da qui restano validi. Si toglie questa riga il giorno
+     in cui il sito diventa suo. -->
+<meta name="robots" content="noindex, follow">
+
+<!-- ---------- anteprima quando il link viene mandato su WhatsApp ----------
+     MODIFICA QUI: sostituire NOMEDOMINIO.it quando si sceglie il dominio.
+     og.jpg è già la foto vera dello studio, ritagliata 1200x630. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Fisiologicamente">
+<meta property="og:title" content="Osteopata ad Asti — Samuele Inguì | Fisiologicamente">
+<meta property="og:description" content="Osteopata, chinesiologo e posturologo ad Asti. Dolori posturali, muscolari e viscerali: risolti in poche sedute. Studio in Via Porta Romana 15.">
+<meta property="og:image" content="https://fabiuz9494.github.io/fisiologicamente/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://fabiuz9494.github.io/fisiologicamente/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fabiuz9494.github.io/fisiologicamente/img/og.jpg">
+<link rel="canonical" href="https://fabiuz9494.github.io/fisiologicamente/">
+
+<!-- a 16 pixel la scritta del logo sparisce: nell'icona resta solo il triangolo -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<meta name="theme-color" content="#231027">
+
+<title>Osteopata ad Asti — Samuele Inguì | Fisiologicamente</title>
+<meta name="description" content="Osteopata, chinesiologo e posturologo ad Asti. Dolori posturali, muscolari e viscerali: risolti in poche sedute. Studio in Via Porta Romana 15.">
+
+<style>
+/* ====================================================================
+   1. CARATTERI
+   I file stanno in font/: il browser di chi visita non contatta Google,
+   quindi il suo indirizzo non esce di qui.
+   Newsreader per i titoli (serio ma caldo, non da clinica), Karla per i
+   testi (umanista, si legge bene anche a 15px).
+   ==================================================================== */
+@font-face{
+  font-family:'Display';
+  font-style:normal; font-weight:400 700; font-display:swap;
+  src:url('font/newsreader-400700-latin-ext-a6a2a4.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face{
+  font-family:'Display';
+  font-style:normal; font-weight:400 700; font-display:swap;
+  src:url('font/newsreader-400700-latin-f24c32.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{font-family:'Testo';font-style:normal;font-weight:400;font-display:swap;src:url('font/karla-400-latin-ext-065edd.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:400;font-display:swap;src:url('font/karla-400-latin-119e3b.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:500;font-display:swap;src:url('font/karla-500-latin-ext-065edd.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:500;font-display:swap;src:url('font/karla-500-latin-119e3b.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:600;font-display:swap;src:url('font/karla-600-latin-ext-065edd.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:600;font-display:swap;src:url('font/karla-600-latin-119e3b.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:700;font-display:swap;src:url('font/karla-700-latin-ext-065edd.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Testo';font-style:normal;font-weight:700;font-display:swap;src:url('font/karla-700-latin-119e3b.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* ====================================================================
+   2. COLORI — campionati dal suo logo, non scelti a occhio
+   Il triangolo sta su una sfumatura che va da #A04684 (magenta, a
+   sinistra) a #561D61 (viola, a destra): il sito nasce da lì.
+   ==================================================================== */
+:root{
+  --scuro-900:#231027;      /* viola quasi nero: le fasce piene */
+  --scuro-800:#2f1634;
+  --chiaro:#f7f3f4;         /* fondo chiaro principale, appena rosato */
+  --chiaro-2:#ece2e7;       /* stesso fondo un tono sotto, per alternare */
+  --avorio:#fdfafb;         /* il bianco caldo: testo sopra le foto */
+  --accento:#8a2f6d;        /* magenta SCURO: si legge su fondo chiaro */
+  --accento-chiaro:#d492bd; /* magenta CHIARO: solo dentro le fasce scure */
+  --inchiostro:#1e141f;
+  --inchiostro-soft:#5d4f5c;
+  --bordo:rgba(30,20,31,.14);
+
+  --display:'Display', Georgia, serif;
+  --testo:'Testo', system-ui, sans-serif;
+
+  --easing:cubic-bezier(.16,.8,.24,1);
+}
+
+/* ====================================================================
+   3. BASE
+   ==================================================================== */
+*,*::before,*::after{box-sizing:border-box;}
+/* clip e NON hidden: "hidden" spegne position:sticky in tutta la pagina */
+html{scroll-behavior:smooth;overflow-x:clip;}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+body{
+  margin:0;
+  background:var(--chiaro);
+  color:var(--inchiostro);
+  font-family:var(--testo);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+
+/* come vanno a capo le frasi — dal primo momento, non alla fine */
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;}
+p{margin:0;text-wrap:pretty;}
+li,figcaption,blockquote,summary{text-wrap:pretty;}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px);}
+section{position:relative;}
+/* il respiro era tarato "sulla carta": su un portatile la finestra utile è
+   ~870 px, e 132 px sopra e 132 sotto ogni fascia mangiavano un terzo di
+   schermata per non dire niente */
+.fascia{padding:clamp(56px,7vw,98px) 0;}
+
+/* ---- le etichette piccole maiuscole, col rombo davanti ----
+   Un trattino è un segno da modulo, un rombo è un segno da gioielleria.
+   Quadrato ruotato e non un carattere speciale: resta nitido a qualsiasi
+   ingrandimento e non dipende da un font. */
+.label{
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accento);font-weight:700;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.label::before{
+  content:'';width:7px;height:7px;flex:none;
+  background:currentColor;transform:rotate(45deg);
+}
+/* sopra una foto il colore da solo non basta mai: serve la pastiglia scura.
+   width:max-content e justify-self: dentro una griglia un inline-flex si
+   stira per tutta la colonna, e la pastiglia diventa una fascia larga
+   quanto lo schermo invece di stringere le due parole che contiene. */
+.label--su-scuro{
+  display:inline-flex;max-width:100%;
+  width:max-content;justify-self:start;
+  color:var(--avorio);font-weight:700;letter-spacing:.16em;
+  padding:6px 14px;border-radius:999px;
+  background:rgba(12,6,14,.5);
+  border:1px solid rgba(212,146,189,.45);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  text-shadow:0 1px 3px rgba(10,5,11,.8);
+}
+/* dentro una fascia scura piena la pastiglia non serve: il fondo c'è già */
+.fascia-scura .label--su-scuro{
+  background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;
+  padding:0;color:var(--accento-chiaro);text-shadow:none;
+}
+
+/* ---- il testo sopra le foto: l'ombra doppia ----
+   una stretta per staccare le lettere, una larga che fa da alone. */
+.su-foto{
+  color:var(--avorio);
+  text-shadow:0 1px 3px rgba(10,5,11,.9), 0 2px 16px rgba(10,5,11,.75);
+}
+
+/* ---- comparsa allo scorrimento ---- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--easing),transform 1s var(--easing);}
+.rv.rv-in{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none;transition:none;} }
+
+/* ---- pulsanti ----
+   UN SOLO colore pieno in tutta la pagina, e sta sul tasto che porta i
+   soldi: scrivere su WhatsApp. Tutto il resto è di contorno. */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:44px;                 /* il dito: mai sotto i 44px */
+  padding:15px 24px;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  border:1px solid transparent;
+  transition:transform .3s var(--easing),background .3s var(--easing),color .3s var(--easing),border-color .3s var(--easing);
+}
+.btn-pieno{background:var(--accento);color:var(--avorio);}
+.btn-pieno:hover{background:var(--scuro-900);transform:translateY(-2px);}
+.btn-vuoto{background:transparent;border-color:var(--inchiostro);color:var(--inchiostro);}
+.btn-vuoto:hover{background:var(--inchiostro);color:var(--avorio);}
+/* il bianco sta accanto al magenta sopra la foto: chi preferisce la voce non
+   deve cercare il numero in fondo alla pagina. Resta di contorno — il colore
+   pieno è uno solo e sta sul tasto che porta l'appuntamento. */
+.btn-bianco{
+  background:rgba(253,250,251,.94);color:var(--scuro-900);
+  border-color:rgba(253,250,251,.94);
+}
+.btn-bianco:hover{background:var(--avorio);transform:translateY(-2px);}
+
+/* ====================================================================
+   4. TESTATA FISSA
+   Finché sta sopra la foto serve la fascia scura sfumata dietro: in cima
+   l'immagine è il punto più chiaro della pagina e il nome ci si
+   scioglierebbe dentro. Appena arriva il fondo pieno, sparisce.
+   ==================================================================== */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px clamp(20px,5vw,64px);
+  color:var(--avorio);
+  text-shadow:0 1px 6px rgba(10,5,11,.7);
+  transition:background .5s var(--easing),padding .4s var(--easing),box-shadow .4s var(--easing),text-shadow .4s var(--easing);
+}
+.site-header::before{
+  content:'';position:absolute;left:0;right:0;top:0;height:190px;
+  background:linear-gradient(180deg,rgba(10,5,11,.82) 0%,rgba(10,5,11,.55) 42%,rgba(10,5,11,.22) 74%,rgba(10,5,11,0) 100%);
+  pointer-events:none;z-index:-1;transition:opacity .45s var(--easing);
+}
+.site-header.is-scrolled::before{opacity:0;}
+.site-header.is-scrolled{
+  background:rgba(35,16,39,.93);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  padding:11px clamp(20px,5vw,64px);
+  box-shadow:0 8px 30px rgba(0,0,0,.22);
+  text-shadow:none;
+}
+/* il nome è l'unica cosa che qualcuno deve ricordarsi dopo aver chiuso la
+   pagina: sta scritto grande, e la riga sotto è leggibile senza sforzarsi */
+.brand{font-family:var(--display);font-size:27px;line-height:1.1;display:flex;align-items:center;gap:14px;min-width:0;}
+.brand-logo{width:56px;height:56px;flex:none;border-radius:50%;box-shadow:0 2px 12px rgba(10,5,11,.45);}
+.brand small{
+  display:block;font-family:var(--testo);font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--avorio);font-weight:700;margin-top:4px;
+}
+.site-header.is-scrolled .brand small{color:var(--accento-chiaro);font-weight:600;}
+@media (max-width:520px){
+  .brand{font-size:22px;gap:11px;}
+  .brand-logo{width:46px;height:46px;}
+  .brand small{font-size:10.5px;letter-spacing:.13em;}
+}
+.nav-desktop{display:flex;gap:32px;align-items:center;}
+.nav-desktop a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:11px 0;position:relative;}
+.nav-desktop a::after{
+  content:'';position:absolute;left:0;right:0;bottom:6px;height:1px;
+  background:var(--accento-chiaro);transform:scaleX(0);transform-origin:right;
+  transition:transform .35s var(--easing);
+}
+.nav-desktop a:hover::after{transform:scaleX(1);transform-origin:left;}
+.nav-desktop .btn-nav{
+  border:1px solid var(--accento-chiaro);background:rgba(12,6,14,.45);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  padding:11px 20px;font-size:11.5px;letter-spacing:.16em;
+}
+.site-header.is-scrolled .btn-nav{background:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
+.nav-desktop .btn-nav::after{display:none;}
+.nav-desktop .btn-nav:hover{background:var(--accento-chiaro);color:var(--scuro-900);}
+/* il gemello bianco: stessa forma, colore invertito */
+.nav-desktop .btn-nav-chiaro{
+  border-color:rgba(253,250,251,.85);background:rgba(253,250,251,.9);color:var(--scuro-900);
+}
+.site-header.is-scrolled .btn-nav-chiaro{background:rgba(253,250,251,.92);}
+.nav-desktop .btn-nav-chiaro:hover{background:var(--avorio);color:var(--scuro-900);}
+/* il menu grande sparisce, ma al suo posto arriva la barra in fondo:
+   il nome in testata resta sempre, a qualsiasi larghezza */
+@media (max-width:900px){ .nav-desktop{display:none;} }
+
+/* ====================================================================
+   5. APERTURA
+   Il velo scuro non è un vezzo: senza, su una foto chiara le scritte
+   spariscono e nessun colore le salva.
+   ==================================================================== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:var(--avorio);overflow:hidden;}
+/* z-index espliciti, e non è pignoleria: la foto e il velo sono tutti e due
+   `position:absolute` senza z-index, e in quel caso decide l'ordine del
+   documento — il ::before viene generato PRIMA della foto, quindi finisce
+   SOTTO, e il velo non si vede affatto. Sembra che ci sia perché il fondo
+   della foto è scuro di suo, e ci si accorge dell'errore solo il giorno in
+   cui arriva una foto chiara. Ordine giusto: foto 0, velo 1, testo 2. */
+.hero-img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;}
+/* DUE veli, non uno. La foto dello studio è bianchissima — pareti chiare,
+   libreria, luce da finestra — e il velo verticale da solo lasciava il
+   titolone a sciogliersi dentro la parete.
+   Il primo velo viene da SINISTRA, dove stanno tutte le parole, e si spegne
+   prima di arrivare a Samuele, che resta luminoso: così si protegge il testo
+   senza spegnere il soggetto.
+   Il secondo è quello verticale di sempre, che chiude il fondo.
+   Sul telefono il testo sta in basso e lui è al centro: lì il velo laterale
+   toglierebbe luce senza servire, e si torna al solo verticale, più deciso. */
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,rgba(12,6,14,.74) 0%,rgba(12,6,14,.5) 30%,rgba(12,6,14,.13) 56%,rgba(12,6,14,0) 74%),
+    linear-gradient(180deg,rgba(12,6,14,.34) 0%,rgba(12,6,14,.08) 24%,rgba(12,6,14,.2) 52%,rgba(10,5,11,.7) 82%,rgba(10,5,11,.9) 100%);
+}
+@media (max-width:760px){
+  .hero::before{
+    background:linear-gradient(180deg,rgba(12,6,14,.56) 0%,rgba(12,6,14,.3) 22%,rgba(12,6,14,.56) 48%,rgba(10,5,11,.88) 74%,rgba(10,5,11,.96) 100%);
+  }
+}
+/* min-width:0: senza, un blocco di testo largo non si lascia restringere
+   e sul telefono sfonda lo schermo a destra */
+.hero-content{
+  position:relative;z-index:2;width:100%;min-width:0;
+  padding:0 clamp(20px,5vw,64px) clamp(56px,8vw,96px);
+  display:grid;grid-template-columns:minmax(0,1fr);gap:20px;
+}
+.hero h1{font-size:clamp(46px,8.6vw,108px);line-height:1;max-width:13ch;text-shadow:0 3px 26px rgba(10,5,11,.55);}
+/* il magenta CHIARO, non quello scuro: sopra una foto il #8a2f6d sparirebbe
+   dentro l'immagine. E l'ombra doppia va tenuta anche qui — una parola
+   colorata su una foto ha bisogno di stacco più di una bianca, non meno. */
+.hero h1 .acc{
+  color:var(--accento-chiaro);
+  text-shadow:0 1px 4px rgba(8,4,9,.9), 0 3px 26px rgba(8,4,9,.75);
+}
+/* NON flex: dentro un flex il paragrafo prende la larghezza della riga
+   più lunga e sfonda lo schermo del telefono invece di andare a capo */
+.hero-frase{
+  display:block;max-width:100%;
+  font-size:clamp(15px,1.2vw,17px);font-weight:500;line-height:1.7;
+}
+.hero-frase span{display:block;}
+/* la sua frase, scesa qui dal titolo: resta la cosa più marcata della riga */
+.hero-frase strong{font-weight:700;letter-spacing:.005em;}
+@media (max-width:760px){ .hero-frase span{display:inline;} }
+.hero-riga{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px;}
+
+/* ====================================================================
+   6. BLOCCHI DI CONTENUTO
+   ==================================================================== */
+.intro-sezione{max-width:640px;margin-bottom:clamp(30px,4vw,54px);}
+.intro-sezione h2{font-size:clamp(32px,4.2vw,52px);line-height:1.06;margin-top:16px;}
+/* fra i 50 e i 75 caratteri per riga: oltre, il testo diventa un muro */
+.intro-sezione p.desc{margin-top:18px;font-size:16px;color:var(--inchiostro-soft);max-width:56ch;}
+
+/* ---- racconto a due colonne: foto + testo ---- */
+.narrativa{display:grid;grid-template-columns:1fr;gap:56px;align-items:center;}
+@media (min-width:860px){ .narrativa{grid-template-columns:1.05fr .95fr;gap:clamp(48px,6vw,90px);} }
+/* il ritratto è 1080x1480, cioè 0.73: tenendo il riquadro vicino alla sua
+   forma vera il browser taglia 90 pixel invece di 300 */
+.narrativa-foto{aspect-ratio:.78;overflow:hidden;}
+/* sul telefono la foto esce dalle imbottiture e arriva ai due bordi:
+   la cornice chiara attorno la faceva sembrare un francobollo */
+@media (max-width:859px){
+  .narrativa-foto{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);aspect-ratio:4/4.2;}
+}
+.narrativa-foto img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--easing);}
+.narrativa-foto:hover img{transform:scale(1.05);}
+.narrativa-testo h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;margin-top:16px;}
+.narrativa-testo p{margin-top:20px;font-size:16px;color:var(--inchiostro-soft);max-width:52ch;}
+
+/* i tre titoli, uno sotto l'altro con il rombo davanti */
+.titoli{list-style:none;margin:30px 0 0;padding:0;}
+.titoli li{
+  position:relative;padding:13px 0 13px 24px;
+  border-top:1px solid var(--bordo);
+  font-size:16px;
+}
+.titoli li:last-child{border-bottom:1px solid var(--bordo);}
+.titoli li::before{
+  content:'';position:absolute;left:0;top:21px;
+  width:5px;height:5px;background:var(--accento);transform:rotate(45deg);
+}
+.titoli strong{font-family:var(--display);font-size:19px;font-weight:600;display:block;}
+.titoli span{color:var(--inchiostro-soft);font-size:15px;}
+
+.fascia-chiara-2{background:var(--chiaro-2);}
+
+/* ---- fascia scura: dove riceve ---- */
+.fascia-scura{background:var(--scuro-900);color:var(--avorio);padding:clamp(80px,12vw,148px) 0;position:relative;overflow:hidden;}
+.fascia-scura::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(620px 420px at 10% 18%,rgba(212,146,189,.16),transparent 62%),
+    radial-gradient(720px 520px at 90% 86%,rgba(160,70,132,.18),transparent 62%);
+}
+.fascia-scura .wrap{position:relative;}
+.studio{display:grid;grid-template-columns:1fr;gap:38px;align-items:center;}
+@media (min-width:860px){ .studio{grid-template-columns:1.1fr .9fr;gap:clamp(48px,7vw,96px);} }
+.studio h2{font-size:clamp(32px,4.6vw,56px);line-height:1.06;margin-top:18px;}
+.studio .indirizzo{
+  margin-top:22px;font-family:var(--display);font-size:clamp(21px,2.4vw,27px);
+  line-height:1.35;color:var(--avorio);
+}
+.studio .sotto{margin-top:14px;font-size:15.5px;color:rgba(253,250,251,.76);max-width:46ch;}
+.studio-azioni{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.studio-azioni .btn-vuoto{border-color:rgba(253,250,251,.45);color:var(--avorio);}
+.studio-azioni .btn-vuoto:hover{background:var(--avorio);color:var(--scuro-900);}
+
+/* ---- righe alternate foto/testo (i tre percorsi) ---- */
+.riga{display:grid;grid-template-columns:1fr;align-items:stretch;}
+@media (min-width:860px){
+  .riga{grid-template-columns:1fr 1fr;min-height:540px;}
+  .riga.inversa .riga-foto{order:2;}
+  .riga.inversa .riga-info{order:1;}
+}
+/* max-width 560: NON è una scelta estetica, è aritmetica.
+   Queste tre foto vengono da Instagram e hanno 1080-1180 pixel di larghezza,
+   e basta. Su uno schermo che disegna due punti per pixel, un riquadro da
+   560 px CSS ne chiede 1120 veri: fin lì sono nitide, oltre il browser le
+   ingrandisce e si sgranano. Prima il riquadro arrivava a 796 px — cioè
+   1592 richiesti contro 1080 disponibili — ed era esattamente quello che si
+   vedeva. Se un giorno arrivano foto più grandi, questo numero si alza. */
+.riga-foto{position:relative;overflow:hidden;min-height:320px;width:100%;}
+.riga-foto img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.6s var(--easing);}
+.riga:hover .riga-foto img{transform:scale(1.045);}
+@media (min-width:860px){
+  /* aspect-ratio 0.86 = la forma VERA di queste tre foto (1080x1256 circa).
+     Prima il riquadro era orizzontale e le foto verticali: il browser ne
+     mostrava una fascia centrale e la persona si vedeva a metà. Il riquadro
+     prende la forma della foto, non il contrario — se no ogni foto va
+     sacrificata per stare dentro un disegno deciso prima di vederla. */
+  .riga-foto{max-width:560px;align-self:center;aspect-ratio:.86;min-height:0;}
+  /* la foto resta attaccata al bordo ESTERNO: l'aria si apre verso il testo,
+     e non fra la foto e il bordo dello schermo */
+  .riga:not(.inversa) .riga-foto{justify-self:start;}
+  .riga.inversa .riga-foto{justify-self:end;}
+}
+.riga-info{display:flex;flex-direction:column;justify-content:center;padding:48px clamp(20px,4vw,32px);}
+.riga-numero{font-family:var(--display);font-size:15px;color:var(--accento);display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.riga-numero::before{content:'';width:7px;height:7px;background:currentColor;transform:rotate(45deg);}
+.riga-info h3{font-size:clamp(29px,3.4vw,40px);}
+.riga-info .desc{margin-top:16px;font-size:15.5px;color:var(--inchiostro-soft);max-width:48ch;}
+.riga-dettagli{display:flex;flex-wrap:wrap;margin-top:26px;border-top:1px solid var(--bordo);}
+.riga-dettagli span{
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--inchiostro-soft);
+  padding:12px 18px 12px 0;border-right:1px solid var(--bordo);margin-right:18px;
+}
+.riga-dettagli span:last-child{border-right:0;margin-right:0;}
+.riga-cta{
+  margin-top:24px;display:inline-flex;align-items:center;width:max-content;
+  min-height:44px;padding:13px 26px;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  border:1px solid var(--inchiostro);transition:background .3s var(--easing),color .3s var(--easing);
+}
+.riga-cta:hover{background:var(--scuro-900);border-color:var(--scuro-900);color:var(--avorio);}
+
+/* ---- immagine a tutta larghezza con scritta sopra ----
+   il velo parte scuro e sale: su una zona chiara della foto una sfumatura
+   timida non basta e le scritte spariscono lo stesso */
+/* aspect-ratio invece di un'altezza fissa: con height:600 su schermo largo
+   la fascia diventava 2.4:1 e della foto (1.5:1) restava una striscia */
+.full-bleed{position:relative;width:100%;aspect-ratio:1.9;max-height:640px;overflow:hidden;}
+@media (max-width:760px){ .full-bleed{aspect-ratio:1.25;} }
+.full-bleed img{width:100%;height:100%;object-fit:cover;}
+.full-bleed::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(10,5,11,.93) 0%,rgba(10,5,11,.8) 28%,rgba(10,5,11,.46) 55%,rgba(10,5,11,.08) 80%,rgba(10,5,11,0) 100%);
+}
+.full-bleed-testo{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:clamp(28px,6vw,64px) clamp(20px,5vw,64px);
+  color:var(--avorio);text-shadow:0 1px 4px rgba(10,5,11,.75),0 2px 18px rgba(10,5,11,.6);
+}
+.full-bleed-testo h2{font-size:clamp(28px,4.4vw,52px);max-width:17ch;}
+.full-bleed-testo p{margin-top:14px;font-size:15px;max-width:50ch;color:rgba(253,250,251,.96);}
+
+/* ---- risposte (le domande frequenti) ---- */
+.risposte{max-width:820px;}
+.risposte details{border-bottom:1px solid var(--bordo);}
+.risposte details:first-of-type{border-top:1px solid var(--bordo);}
+.risposte summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:flex-start;gap:16px;
+  padding:22px 0;min-height:44px;
+  font-family:var(--display);font-size:clamp(18px,2vw,22px);line-height:1.35;
+}
+.risposte summary::-webkit-details-marker{display:none;}
+.risposte summary::before{
+  content:'';flex:none;width:7px;height:7px;margin-top:11px;
+  background:var(--accento);transform:rotate(45deg);
+  transition:transform .35s var(--easing);
+}
+.risposte details[open] summary::before{transform:rotate(225deg);}
+.risposte .risposta{padding:0 0 24px 23px;font-size:16px;color:var(--inchiostro-soft);max-width:62ch;}
+
+/* ---- il marchio in filigrana ----
+   Riempie l'aria a destra delle due sezioni chiare, dove il testo sta tutto
+   a sinistra e restava mezzo schermo vuoto senza motivo.
+
+   È IL LOGO VERO di Samuele: img/marchio.png è il suo file, con lo sfondo
+   tolto e ricolorato dell'accento del sito. Un primo tentativo lo ridisegnava
+   a mano in SVG — più comodo, ma NON era il suo logo, ed è la prima cosa che
+   un cliente nota. Il logo di un cliente non si reinterpreta: si usa il suo.
+   Un secondo tentativo lo metteva come maschera CSS (mask-image) per poterlo
+   colorare dal foglio di stile: elegante, ma non veniva disegnato. Un'immagine
+   normale non dipende da niente. */
+.filigrana{
+  /* NASCOSTA per difetto, e accesa solo dove l'aria c'è davvero (vedi sotto).
+     Prima compariva sempre e sotto i 1100 px finiva dietro alle domande:
+     testo sopra un'immagine senza velo, cioè il difetto che questo sito
+     evita ovunque. Meglio niente marchio che marchio addosso alle parole. */
+  display:none;
+}
+@media (min-width:1100px){
+  .filigrana{
+    display:block;
+    position:absolute;right:clamp(24px,4vw,72px);top:50%;
+    transform:translateY(-50%);
+    width:min(29vw,380px);height:auto;
+    opacity:.1;
+    pointer-events:none;z-index:0;
+  }
+}
+/* il contenuto sta sempre sopra la filigrana */
+.wrap{position:relative;z-index:1;}
+/* le due colonne di testo si fermano prima della fascia del marchio, così
+   non ci finiscono mai sopra nemmeno a 1100 px esatti */
+@media (min-width:1100px){
+  .risposte,.contatti-lista{max-width:660px;}
+}
+
+/* ---- contatti ---- */
+.contatti-lista{list-style:none;margin:24px 0 0;padding:0;max-width:760px;}
+/* flex-wrap: su un telefono stretto etichetta e valore vanno uno sotto
+   l'altro invece di schiacciarsi o sfondare la riga */
+.contatti-lista li{
+  display:flex;justify-content:space-between;gap:6px 16px;flex-wrap:wrap;
+  padding:13px 0;border-bottom:1px solid var(--bordo);font-size:15px;
+  min-height:44px;align-items:center;
+}
+.contatti-lista li > *{min-width:0;}
+.contatti-lista li span:first-child{color:var(--inchiostro-soft);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
+/* il dito: il numero e la mail erano alti 25 px. La riga in sé arrivava a 44,
+   ma quello che si tocca è il collegamento, non la riga — e col mouse non te
+   ne accorgi mai perché il puntatore è un punto. */
+.contatti-lista li a{
+  display:inline-block;padding:10px 0;
+  border-bottom:1px solid transparent;transition:border-color .25s;
+}
+.contatti-lista li a:hover{border-color:var(--inchiostro);}
+.contatti-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+
+/* ====================================================================
+   7. PIEDE
+   ==================================================================== */
+footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(253,250,251,.14);}
+@media (min-width:760px){ .footer-grid{grid-template-columns:1.4fr 1fr 1fr;} }
+.footer-brand{font-family:var(--display);font-size:24px;color:var(--avorio);}
+.footer-brand small{display:block;font-family:var(--testo);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accento-chiaro);margin-top:8px;}
+.footer-col h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accento-chiaro);margin:0 0 14px;font-family:var(--testo);font-weight:700;}
+/* padding 11 e non 6: 22 px di testo più 22 di respiro fanno i 44 che serve
+   al dito. Erano 34 e si sbagliava voce di continuo. */
+.footer-col a,.footer-col p{display:block;font-size:14px;margin-bottom:2px;color:rgba(253,250,251,.75);padding:11px 0;}
+.footer-col a:hover{color:var(--avorio);}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:22px;font-size:12px;color:rgba(253,250,251,.55);}
+
+/* ====================================================================
+   8. BARRA FISSA IN FONDO (solo telefono)
+   Quello che porta i soldi sta in basso al centro, dove arriva il pollice.
+   env(safe-area-inset-bottom): sotto la barra degli iPhone con la tacca
+   ci finirebbe metà pulsante.
+   ==================================================================== */
+.barra-mobile{display:none;}
+@media (max-width:900px){
+  .barra-mobile{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+    background:var(--scuro-900);gap:10px;
+    padding:8px 16px;
+    padding-bottom:max(8px, env(safe-area-inset-bottom));
+    box-shadow:0 -10px 30px rgba(0,0,0,.28);
+  }
+  .barra-mobile .btn{flex:1;padding:12px 14px;font-size:11.5px;}
+  .barra-mobile .btn-secondo{background:transparent;border:1px solid rgba(253,250,251,.4);color:var(--avorio);}
+  .barra-mobile .btn-primo{background:var(--accento-chiaro);color:var(--scuro-900);}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
+}
+
+/* ---- avviso momentaneo in fondo allo schermo ---- */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);
+  background:var(--inchiostro);color:var(--avorio);
+  padding:14px 22px;font-size:13px;box-shadow:0 16px 40px rgba(0,0,0,.28);
+  z-index:400;opacity:0;pointer-events:none;
+  transition:opacity .35s var(--easing),transform .35s var(--easing);
+}
+.toast.mostra{opacity:1;transform:translate(-50%,0);}
+
+::selection{background:var(--accento);color:var(--avorio);}
+</style>
+
+<!-- ====================================================================
+     DATI PER GOOGLE (schema.org / JSON-LD)
+     Dicono le STESSE cose che si leggono in pagina: se restano diversi
+     Google li penalizza.
+     MODIFICA QUI quando Samuele conferma: gli orari (openingHours) e la
+     mail. Meglio una voce assente che una voce sbagliata — per questo qui
+     sotto non ci sono né orari né prezzi.
+     ==================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Fisiologicamente — Samuele Inguì",
+  "description": "Osteopata, chinesiologo e posturologo ad Asti. Dolori posturali, muscolari e viscerali.",
+  "url": "https://fabiuz9494.github.io/fisiologicamente/",
+  "image": "https://fabiuz9494.github.io/fisiologicamente/img/og.jpg",
+  "telephone": "+393203660511",
+  "sameAs": [
+    "https://www.instagram.com/fisiologicamente_osteopatia",
+    "https://www.facebook.com/share/1BrrNd8U7g/",
+    "https://linktr.ee/fisiologicamente"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Porta Romana 15",
+    "postalCode": "14100",
+    "addressLocality": "Asti",
+    "addressRegion": "AT",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.8986898,
+    "longitude": 8.1941416
+  }
+}
+</script>
+<!-- domande-e-risposte-per-le-macchine -->
+<!-- Generato da fai-faq.py dal testo vero della pagina: NON si tocca
+     a mano. Se cambi una domanda o una risposta la' sotto, rilancia
+     lo script, se no quello che dichiari a Google non e' piu' quello
+     che si legge — e per Google e' una violazione. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dove sei, e come ci arrivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo studio è ad Asti, in Via Porta Romana 15. Sulla mappa lo trovi come Fisiologicamente Osteopatia: dal sito c'è il pulsante che te la apre già puntata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come prenoto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con un messaggio su WhatsApp al 320 366 0511. Raccontami che disturbo hai e da quanto tempo: quando ci sentiamo ho già in mano metà della risposta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Di cosa ti occupi, esattamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dolori posturali, muscolari e viscerali. Li affronto da osteopata, da posturologo e da chinesiologo: tre modi di leggere lo stesso corpo, usati sulla stessa persona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ci vogliono molte sedute?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Poche. È la prima cosa che dico a chi mi scrive, perché è il timore più comune: che diventi un abbonamento a vita. Ci si rivede solo se serve."
+      }
+    }
+  ]
+}
+</script>
+<!-- fine-domande-e-risposte-per-le-macchine -->
+</head>
+<body>
+
+<!-- ============ TESTATA ============ -->
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="brand">
+    <img class="brand-logo" src="img/logo.png" alt="Logo di Fisiologicamente: una colonna vertebrale dentro un triangolo" width="46" height="46">
+    <span>Fisiologicamente
+      <small>Samuele Inguì &middot; Osteopata&nbsp;ad&nbsp;Asti</small>
+    </span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="#chi">Chi sono</a>
+    <a href="#percorsi">Cosa faccio</a>
+    <a href="#studio">Lo studio</a>
+    <a href="#risposte">Risposte</a>
+    <a href="#" class="btn-nav btn-nav-chiaro js-tel">Chiama</a>
+    <a href="#contatti" class="btn-nav js-wa">Prenota</a>
+  </nav>
+</header>
+
+<!-- ============ APERTURA ============
+     Il titolo è la frase con cui Samuele si presenta sul suo Linktree,
+     parola per parola. Sotto, le tre qualifiche come le scrive lui.
+     La foto e il suo taglio verticale per il telefono vengono dallo stesso
+     scatto da 4320px: su uno schermo verticale una foto orizzontale viene
+     ingrandita per forza, e ingrandire vuol dire sgranare. -->
+<section class="hero" id="top">
+  <picture>
+    <source media="(max-width:760px)" srcset="img/hero-mobile.jpg">
+    <img class="hero-img" src="img/hero.jpg" alt="Samuele Inguì seduto accanto al lettino nel suo studio ad Asti, con lo scheletro anatomico e la libreria" loading="eager" fetchpriority="high">
+  </picture>
+  <div class="hero-content">
+    <span class="label label--su-scuro">Osteopatia &middot; Asti</span>
+    <!-- "Risolvo in poche sedute" è la sua frase e resta, ma scesa nella riga
+         piccola: come titolone suonava fredda, da cartello. Sopra ci va il
+         mestiere raccontato per quello che è — un lavoro di mani e di
+         ascolto — che è la cosa che scalda e che nessun altro può copiare. -->
+    <h1>Mani che <span class="acc">ascoltano</span></h1>
+    <p class="hero-frase su-foto">
+      <span><strong>Risolvo in poche sedute</strong> dolori posturali, muscolari&nbsp;e&nbsp;viscerali.</span>
+      <span>Osteopata, chinesiologo e&nbsp;posturologo. Studio in&nbsp;Via&nbsp;Porta Romana,&nbsp;ad&nbsp;Asti.</span>
+    </p>
+    <div class="hero-riga">
+      <a href="#contatti" class="btn btn-pieno js-wa">Prenota su WhatsApp</a>
+      <a href="#" class="btn btn-bianco js-tel">Chiama</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHI SONO ============
+     MODIFICA QUI — da chiedere a Samuele, è il buco più grosso del sito:
+       · dove ha studiato e in quanti anni (l'osteopatia è un percorso
+         lungo: scriverlo vale più di qualsiasi aggettivo);
+       · da quando riceve ad Asti;
+       · perché ha scelto questo mestiere — due righe sue, non mie.
+     Finché non le dice, qui sotto c'è solo quello che ha già scritto lui
+     pubblicamente. Preferisco una sezione corta e vera che lunga e finta. -->
+<section class="fascia" id="chi">
+  <div class="wrap">
+    <div class="narrativa rv">
+      <div class="narrativa-foto">
+        <!-- il ritratto, ritagliato 4:5 sul file e non lasciato tagliare al
+             browser: darlo intero significa mostrarne una fetta a caso -->
+        <img src="img/chi.jpg" alt="Ritratto di Samuele Inguì in divisa bianca, a braccia incrociate" loading="lazy">
+      </div>
+      <div class="narrativa-testo">
+        <span class="label">Chi sono</span>
+        <h2>Tre modi di guardare<br>lo stesso corpo.</h2>
+        <p>Sono Samuele Inguì e&nbsp;ricevo ad&nbsp;Asti, in&nbsp;Via&nbsp;Porta Romana. Un&nbsp;dolore lo&nbsp;leggo con&nbsp;tre&nbsp;lenti diverse, e&nbsp;spesso la&nbsp;risposta sta&nbsp;lontano dal&nbsp;punto&nbsp;che&nbsp;fa&nbsp;male.</p>
+        <ul class="titoli">
+          <li><strong>Osteopata</strong><span>Lavoro con&nbsp;le&nbsp;mani su&nbsp;articolazioni, muscoli&nbsp;e&nbsp;organi.</span></li>
+          <li><strong>Posturologo</strong><span>Guardo come stai in&nbsp;piedi, perché è&nbsp;lì&nbsp;che&nbsp;nascono molti&nbsp;dolori.</span></li>
+          <li><strong>Chinesiologo</strong><span>Studio il&nbsp;movimento: come ti&nbsp;muovi ogni giorno, e&nbsp;come rimetterlo&nbsp;a&nbsp;posto.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSA FACCIO ============
+     Le tre righe sono le tre qualifiche che Samuele dichiara.
+     MODIFICA QUI, e sono le domande da fargli:
+       · quanto dura una seduta;
+       · quanto costa (il prezzo scritto in chiaro disinnesca il
+         "costa troppo" prima che si formi: è la voce che manca di più);
+       · quali disturbi vede più spesso, con parole sue.
+     I riquadri dei prezzi restano fuori finché non risponde: un prezzo
+     inventato su un sito è peggio di un prezzo assente. -->
+<section id="percorsi">
+  <!-- niente padding-top qui: la sezione di sopra ha già il suo respiro in
+       fondo, e i due si sommavano in un vuoto da 264 px senza motivo -->
+  <div class="wrap">
+    <div class="intro-sezione rv">
+      <span class="label">Cosa faccio</span>
+      <h2>Il&nbsp;dolore si&nbsp;vede in&nbsp;un&nbsp;punto. Quasi mai&nbsp;comincia&nbsp;lì.</h2>
+      <p class="desc">Tre&nbsp;strumenti diversi, usati sulla stessa persona: quello che&nbsp;le&nbsp;mani non&nbsp;spiegano lo&nbsp;spiega la&nbsp;postura, e&nbsp;quello che&nbsp;la&nbsp;postura non&nbsp;spiega lo&nbsp;spiega il&nbsp;modo&nbsp;in&nbsp;cui&nbsp;ti&nbsp;muovi.</p>
+    </div>
+  </div>
+
+  <div class="riga rv">
+    <div class="riga-foto">
+      <!-- MODIFICA QUI: quando capita, una foto di lui che TRATTA davvero —
+           le mani su un paziente sul lettino. Fra tutte le foto che mancano
+           è quella che vende di più: qui si vede il lettino, non il lavoro. -->
+      <img src="img/servizio-1.jpg" alt="Samuele Inguì seduto accanto al lettino, con un modello anatomico del cranio" loading="lazy">
+    </div>
+    <div class="riga-info">
+      <div class="riga-numero">01</div>
+      <h3>Osteopatia</h3>
+      <p class="desc">Le&nbsp;mani sulle articolazioni, sui&nbsp;muscoli e&nbsp;sugli organi. È&nbsp;il&nbsp;lavoro su&nbsp;cui&nbsp;costruisco il&nbsp;resto: dolori posturali, muscolari&nbsp;e&nbsp;viscerali.</p>
+      <div class="riga-dettagli">
+        <!-- MODIFICA QUI: durata e prezzo, appena Samuele li dice. -->
+        <span>Su appuntamento</span><span>In studio, ad Asti</span>
+      </div>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="osteopatia">Prenota una seduta</a>
+    </div>
+  </div>
+
+  <div class="riga inversa rv">
+    <div class="riga-foto">
+      <img src="img/servizio-2.jpg" alt="Samuele Inguì accanto allo scheletro anatomico del suo studio" loading="lazy">
+    </div>
+    <div class="riga-info">
+      <div class="riga-numero">02</div>
+      <h3>Postura</h3>
+      <p class="desc">Come stai in&nbsp;piedi, come stai seduto, come dormi. Molti dolori che&nbsp;tornano sempre uguali hanno qui&nbsp;la&nbsp;loro&nbsp;spiegazione.</p>
+      <div class="riga-dettagli">
+        <span>Su appuntamento</span><span>In studio, ad Asti</span>
+      </div>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="postura">Prenota una valutazione</a>
+    </div>
+  </div>
+
+  <div class="riga rv">
+    <div class="riga-foto">
+      <img src="img/servizio-3.jpg" alt="Samuele Inguì in tuta, seduto a bordo pista in un campo di atletica" loading="lazy">
+    </div>
+    <div class="riga-info">
+      <div class="riga-numero">03</div>
+      <h3>Movimento</h3>
+      <p class="desc">Il&nbsp;gesto che&nbsp;ripeti mille volte al&nbsp;giorno, al&nbsp;lavoro o&nbsp;nello sport. Rimetterlo a&nbsp;posto è&nbsp;quello che&nbsp;tiene il&nbsp;risultato anche dopo l'ultima&nbsp;seduta.</p>
+      <div class="riga-dettagli">
+        <span>Su appuntamento</span><span>In studio, ad Asti</span>
+      </div>
+      <a href="#contatti" class="riga-cta js-wa" data-wa="movimento">Prenota un incontro</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOTO A TUTTA LARGHEZZA ============ -->
+<div class="full-bleed rv">
+  <img src="img/larga.jpg" alt="La stanza dello studio ad Asti: il lettino, i modelli anatomici e la libreria" loading="lazy">
+  <div class="full-bleed-testo">
+    <h2>Poche sedute, e&nbsp;ci&nbsp;si&nbsp;rivede solo&nbsp;se&nbsp;serve.</h2>
+    <p>È&nbsp;la&nbsp;promessa con&nbsp;cui&nbsp;Samuele si&nbsp;presenta, ed&nbsp;è&nbsp;anche il&nbsp;modo in&nbsp;cui&nbsp;lavora: il&nbsp;percorso finisce quando il&nbsp;dolore&nbsp;è&nbsp;passato.</p>
+  </div>
+</div>
+
+<!-- ============ LO STUDIO ============
+     Qui l'accento chiaro si può usare: il fondo è pieno, non è una foto.
+     MODIFICA QUI: gli orari. Sono la cosa che la gente cerca per prima e
+     al momento non li so — appena arrivano vanno scritti sia qui che nel
+     blocco JSON-LD in testa alla pagina, con le stesse parole. -->
+<section class="fascia-scura" id="studio">
+  <div class="wrap">
+    <div class="studio rv">
+      <div>
+        <span class="label label--su-scuro">Lo studio</span>
+        <!-- "dentro le mura" era una mia deduzione dal nome della via, e le
+             coordinate dicono che lo studio sta a un chilometro dal centro:
+             fuori. Questo titolo invece dà per scontato l'incontro, che è il
+             passo successivo, e non afferma niente che non sappia. -->
+        <h2>Dove ci si vede.</h2>
+        <p class="indirizzo">Via Porta Romana&nbsp;15<br>14100 Asti</p>
+        <p class="sotto">Si&nbsp;viene su&nbsp;appuntamento. Il&nbsp;modo più&nbsp;veloce per&nbsp;prenderlo è&nbsp;un&nbsp;messaggio su&nbsp;WhatsApp: scrivimi due&nbsp;righe&nbsp;e&nbsp;ci&nbsp;sentiamo.</p>
+        <div class="studio-azioni">
+          <a href="#contatti" class="btn btn-pieno js-wa">Scrivi su WhatsApp</a>
+          <a href="https://maps.app.goo.gl/1hUwv4FbGWSb4bPD9" target="_blank" rel="noopener" class="btn btn-vuoto">Apri la mappa</a>
+        </div>
+      </div>
+      <div>
+        <!-- la sala pesi: dentro c'è anche la porta a vetri con scritto
+             ENTRATA, quindi chi arriva riconosce dove suonare — era la foto
+             che mancava. aspect-ratio 1.7 come il file, così non se ne
+             taglia via un pezzo. -->
+        <img src="img/studio.jpg" alt="La sala pesi dello studio: il rack, i manubri e la porta d'ingresso a vetri" loading="lazy" style="width:100%;aspect-ratio:1.7;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RISPOSTE ============
+     Si chiama "Risposte" e non "Dubbi": una sezione chiamata Dubbi non
+     risolve un dubbio, lo ricorda a chi non ce l'aveva.
+     Qui dentro ci sono SOLO risposte che so essere vere. Le domande a cui
+     non so rispondere stanno nel commento qui sotto e vanno fatte a
+     Samuele — sono anche quelle che le persone cercano di più:
+       · quanto dura una seduta e quanto costa;
+       · quante sedute servono di solito;
+       · che orari fa, e se lavora il sabato;
+       · se serve la ricetta o l'impegnativa del medico;
+       · se fa fatture detraibili;
+       · se tratta bambini e donne in gravidanza;
+       · se riceve anche a domicilio.
+     Ogni volta che si tocca questa sezione va rilanciato:
+       python .claude/skills/controllo-sito/fai-faq.py siti-clienti/fisiologicamente
+     perché il blocco per Google deve dire le stesse identiche parole. -->
+<section class="fascia" id="risposte">
+  <img class="filigrana" src="img/marchio.png" alt="" aria-hidden="true" width="1500" height="1482" loading="lazy">
+  <div class="wrap">
+    <div class="intro-sezione rv">
+      <span class="label">Risposte</span>
+      <h2>Quello che&nbsp;mi&nbsp;chiedono prima&nbsp;di&nbsp;venire</h2>
+    </div>
+    <div class="risposte rv">
+      <details>
+        <summary>Dove sei,&nbsp;e&nbsp;come&nbsp;ci&nbsp;arrivo?</summary>
+        <p class="risposta">Lo&nbsp;studio è&nbsp;ad&nbsp;Asti, in&nbsp;Via&nbsp;Porta Romana 15. Sulla mappa lo&nbsp;trovi come Fisiologicamente Osteopatia: dal&nbsp;sito c'è&nbsp;il&nbsp;pulsante che&nbsp;te&nbsp;la&nbsp;apre&nbsp;già&nbsp;puntata.</p>
+      </details>
+      <details>
+        <summary>Come prenoto?</summary>
+        <p class="risposta">Con&nbsp;un&nbsp;messaggio su&nbsp;WhatsApp al&nbsp;320 366 0511. Raccontami che&nbsp;disturbo hai&nbsp;e&nbsp;da&nbsp;quanto tempo: quando ci&nbsp;sentiamo ho&nbsp;già&nbsp;in&nbsp;mano metà della&nbsp;risposta.</p>
+      </details>
+      <details>
+        <summary>Di&nbsp;cosa ti&nbsp;occupi,&nbsp;esattamente?</summary>
+        <p class="risposta">Dolori posturali, muscolari e&nbsp;viscerali. Li&nbsp;affronto da&nbsp;osteopata, da&nbsp;posturologo e&nbsp;da&nbsp;chinesiologo: tre&nbsp;modi di&nbsp;leggere lo&nbsp;stesso corpo, usati sulla stessa&nbsp;persona.</p>
+      </details>
+      <details>
+        <summary>Ci&nbsp;vogliono molte&nbsp;sedute?</summary>
+        <p class="risposta">Poche. È&nbsp;la&nbsp;prima cosa che&nbsp;dico a&nbsp;chi&nbsp;mi&nbsp;scrive, perché è&nbsp;il&nbsp;timore più&nbsp;comune: che&nbsp;diventi un&nbsp;abbonamento a&nbsp;vita. Ci&nbsp;si&nbsp;rivede solo&nbsp;se&nbsp;serve.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATTI ============ -->
+<section class="fascia fascia-chiara-2" id="contatti">
+  <img class="filigrana" src="img/marchio.png" alt="" aria-hidden="true" width="1500" height="1482" loading="lazy">
+  <div class="wrap">
+    <div class="intro-sezione rv">
+      <span class="label">Contatti</span>
+      <!-- "Scrivimi cosa ti fa male" metteva il dolore nel titolo, cioè nel
+           punto dove si guarda per primo: a chi legge resta quello addosso.
+           Qui l'invito è ad aprire un discorso, e il dolore lo nomina lui
+           quando scrive — che è il momento in cui serve saperlo davvero. -->
+      <h2>Raccontami come&nbsp;stai.</h2>
+      <p class="desc">Rispondo io.&nbsp;Se&nbsp;preferisci sentirmi a&nbsp;voce chiama pure: quando sono sul&nbsp;lettino ti&nbsp;richiamo appena&nbsp;finisco.</p>
+    </div>
+    <!-- I contatti stanno scritti QUI e basta (più il blocco CFG in fondo e
+         il JSON-LD in testa). Se lo stesso numero compare in un quarto punto,
+         prima o poi si aggiorna il blocco e si dimentica il testo. -->
+    <ul class="contatti-lista rv">
+      <li><span>WhatsApp</span><a href="#" class="js-wa">320&nbsp;366&nbsp;0511</a></li>
+      <li><span>Telefono</span><a href="#" class="js-tel">320&nbsp;366&nbsp;0511</a></li>
+      <li><span>Studio</span><a href="https://maps.app.goo.gl/1hUwv4FbGWSb4bPD9" target="_blank" rel="noopener">Via&nbsp;Porta Romana 15,&nbsp;Asti</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/fisiologicamente_osteopatia" target="_blank" rel="noopener">@fisiologicamente_osteopatia</a></li>
+      <li><span>Facebook</span><a href="https://www.facebook.com/share/1BrrNd8U7g/" target="_blank" rel="noopener">Fisiologicamente &middot; Samuele&nbsp;Inguì</a></li>
+      <!-- MODIFICA QUI: manca la mail. Da chiedere a Samuele: se non ne ha una
+           dedicata, conviene aprirla insieme al dominio (info@...). -->
+    </ul>
+    <div class="contatti-cta">
+      <a href="#" class="btn btn-pieno js-wa">Scrivi su WhatsApp</a>
+      <a href="#" class="btn btn-vuoto js-tel">Chiama</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIEDE ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Fisiologicamente
+          <small>Samuele Inguì &middot; Osteopata&nbsp;ad&nbsp;Asti</small>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Vai a</h4>
+        <a href="#chi">Chi sono</a>
+        <a href="#percorsi">Cosa faccio</a>
+        <a href="#studio">Lo studio</a>
+        <a href="#risposte">Risposte</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+      <div class="footer-col">
+        <h4>Seguimi</h4>
+        <a href="https://www.instagram.com/fisiologicamente_osteopatia" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/share/1BrrNd8U7g/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://maps.app.goo.gl/1hUwv4FbGWSb4bPD9" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <!-- MODIFICA QUI: la partita IVA di Samuele va scritta qui.
+           Il codice fiscale personale non si pubblica mai. -->
+      <span>&copy; 2026 Samuele Inguì &middot;&nbsp;Fisiologicamente</span>
+      <span>Via&nbsp;Porta Romana 15, 14100&nbsp;Asti</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BARRA FISSA (solo telefono) ============ -->
+<div class="barra-mobile">
+  <a href="#" class="btn btn-secondo js-tel">Chiama</a>
+  <!-- scritta corta: su un telefono da 390px questo pulsante ha 170px
+       scarsi, e "Scrivi su WhatsApp" ci finisce tagliato -->
+  <a href="#" class="btn btn-primo js-wa">WhatsApp</a>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  /* ==================================================================
+     I DATI DEL CLIENTE STANNO SOLO QUI
+     Telefono e messaggi si cambiano in questo blocco e cambiano
+     dappertutto: pulsanti, barra del telefono, testata.
+     Il numero è quello vero, preso dal suo Linktree: i pulsanti aprono
+     davvero la sua chat.
+     ================================================================== */
+  var CFG = {
+    whatsapp: "393203660511",
+    telefono: "+393203660511",
+    messaggio: "Ciao Samuele, ho visto il sito e vorrei prendere un appuntamento.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: "
+  };
+
+  /* Messaggi diversi per pulsanti diversi: la chiave va in data-wa="".
+     Chi scrive dal pulsante di un percorso ha già metà messaggio pronto. */
+  var MESSAGGI = {
+    osteopatia: "Ciao Samuele, vorrei prenotare una seduta di osteopatia.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: ",
+    postura:    "Ciao Samuele, vorrei prenotare una valutazione della postura.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: ",
+    movimento:  "Ciao Samuele, vorrei parlarti di un problema di movimento.\n\nCosa succede: \nDa quanto tempo: \nNome: "
+  };
+
+  var toastEl = document.getElementById('toast'), toastTimer = null;
+  function mostraToast(t){
+    toastEl.textContent = t;
+    toastEl.classList.add('mostra');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('mostra'); }, 2600);
+  }
+
+  document.querySelectorAll('.js-wa').forEach(function(el){
+    var testo = MESSAGGI[el.dataset.wa] || CFG.messaggio;
+    if (CFG.whatsapp) {
+      el.href = 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(testo);
+      el.target = '_blank'; el.rel = 'noopener';
+    } else {
+      el.addEventListener('click', function(e){ e.preventDefault(); mostraToast('Dimostrazione · qui si apre WhatsApp'); });
+    }
+  });
+
+  document.querySelectorAll('.js-tel').forEach(function(el){
+    if (CFG.telefono) el.href = 'tel:' + CFG.telefono;
+    else el.addEventListener('click', function(e){ e.preventDefault(); mostraToast('Dimostrazione · qui parte la chiamata'); });
+  });
+
+  /* la testata prende il fondo pieno appena si scorre */
+  var header = document.getElementById('siteHeader');
+  function aggiornaHeader(){
+    header.classList.toggle('is-scrolled', window.scrollY > 60);
+  }
+  aggiornaHeader();
+  window.addEventListener('scroll', aggiornaHeader, {passive:true});
+
+  /* comparsa allo scorrimento */
+  var elementiRv = document.querySelectorAll('.rv');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    elementiRv.forEach(function(el){ el.classList.add('rv-in'); });
+  } else {
+    var obs = new IntersectionObserver(function(voci){
+      voci.forEach(function(v){
+        if (v.isIntersecting) { v.target.classList.add('rv-in'); obs.unobserve(v.target); }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    elementiRv.forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Cloudflare Pages usa questo file da solo per gli indirizzi sbagliati.
+     Senza, qualsiasi indirizzo storto risponde "va tutto bene" e mostra la
+     home: per una persona è spaesante, per Google sono pagine fantasma. -->
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, follow">
+<title>Pagina non trovata — Fisiologicamente</title>
+<meta name="description" content="La pagina cercata non esiste. Torna alla home di Fisiologicamente, lo studio di osteopatia di Samuele Inguì ad Asti.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="theme-color" content="#231027">
+<style>
+@font-face{
+  font-family:'Display';
+  font-style:normal; font-weight:400 700; font-display:swap;
+  src:url('font/newsreader-400700-latin-f24c32.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Testo';
+  font-style:normal; font-weight:500; font-display:swap;
+  src:url('font/karla-500-latin-119e3b.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  padding:32px 24px;
+  background:#231027;
+  background-image:
+    radial-gradient(620px 420px at 12% 20%,rgba(212,146,189,.18),transparent 62%),
+    radial-gradient(720px 520px at 88% 84%,rgba(160,70,132,.20),transparent 62%);
+  color:#fdfafb;
+  font-family:'Testo', system-ui, sans-serif;
+  line-height:1.6;text-align:center;
+}
+.blocco{max-width:44ch;}
+img{width:84px;height:84px;border-radius:50%;margin:0 auto 28px;display:block;}
+h1{
+  font-family:'Display', Georgia, serif;font-weight:400;
+  font-size:clamp(32px,6vw,52px);line-height:1.1;margin:0;text-wrap:balance;
+}
+p{margin:18px 0 0;font-size:16px;color:rgba(253,250,251,.78);text-wrap:pretty;}
+.torna{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;margin-top:34px;padding:15px 26px;
+  background:#8a2f6d;color:#fdfafb;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  text-decoration:none;transition:transform .3s,background .3s;
+}
+.torna:hover{background:#fdfafb;color:#231027;transform:translateY(-2px);}
+</style>
+</head>
+<body>
+  <div class="blocco">
+    <img src="img/logo.png" alt="Logo di Fisiologicamente" width="84" height="84">
+    <h1>Questa pagina si è persa</h1>
+    <p>L'indirizzo che&nbsp;hai&nbsp;aperto porta fuori strada. Capita: magari il&nbsp;link era&nbsp;vecchio, o&nbsp;per&nbsp;via&nbsp;si&nbsp;è&nbsp;perso un&nbsp;pezzo. La&nbsp;home&nbsp;è&nbsp;di&nbsp;qua.</p>
+    <a class="torna" href="./">Torna alla home</a>
+  </div>
+</body>
+</html>
