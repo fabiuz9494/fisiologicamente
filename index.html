@@ -375,31 +375,66 @@ section{position:relative;}
 /* fra i 50 e i 75 caratteri per riga: oltre, il testo diventa un muro */
 .intro-sezione p.desc{margin-top:18px;font-size:16px;color:var(--inchiostro-soft);max-width:56ch;}
 
-/* A schermo largo l'apertura di "Cosa faccio" sta su due colonne: il titolone
-   a sinistra, la spiegazione a destra appoggiata al suo fondo. Prima il testo
-   si fermava a 640 px e restavano 470 px di bianco alti quanto il blocco: non
-   sembrava respiro, sembrava un pezzo mancante.
+/* A schermo largo l'apertura di "Cosa faccio": il titolo attraversa tutta la
+   larghezza su due righe, e sotto vanno la spiegazione a sinistra e la scheda
+   pratica a destra. Prima il testo si fermava a 640 px e restavano 470 px di
+   bianco: prima sembrava un pezzo mancante, poi — messo lì il paragrafo — si
+   vedeva che era una scritta piazzata a coprire il buco. Un riquadro con
+   dentro delle informazioni vere è l'unica cosa che quel posto se lo merita.
    Solo qui e non nelle altre due sezioni chiare, dove in quel bianco a destra
-   ci sta già il marchio in filigrana. */
-/* 1150 e non 1000: sotto, la colonna di destra scende a 380 px e il testo
-   finisce a 45 caratteri per riga, cioè sotto i 50 che si leggono bene.
-   Meglio una colonna sola che due strette. */
+   ci sta già il marchio in filigrana.
+   1150 e non 1000: sotto, la colonna di destra scende a 380 px e il testo
+   finisce a 45 caratteri per riga, cioè sotto i 50 che si leggono bene. */
 @media (min-width:1150px){
   #percorsi .intro-sezione{
     max-width:none;
     display:grid;
-    grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
-    column-gap:clamp(40px,5vw,80px);
+    grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+    column-gap:clamp(40px,5vw,78px);
     align-items:start;
   }
   #percorsi .intro-sezione .label,
-  #percorsi .intro-sezione h2{grid-column:1;}
-  /* il testo parte in alto, all'altezza della prima riga del titolo: appeso in
-     fondo lasciava il vuoto proprio dove l'occhio arriva per primo.
-     I 22 px sono ottici — la riga piccola e quella da 52 non hanno la stessa
-     distanza dal bordo di sopra. */
-  #percorsi .intro-sezione p.desc{grid-column:2;grid-row:2;margin-top:22px;}
+  #percorsi .intro-sezione h2{grid-column:1/-1;}
+  #percorsi .intro-sezione p.desc{grid-column:1;margin-top:26px;max-width:52ch;}
+  #percorsi .intro-sezione .scheda{grid-column:2;grid-row:3;margin-top:26px;}
 }
+
+/* ---- la scheda pratica ----
+   Quattro cose che uno vuole sapere prima di scrivere: dove, quando, come si
+   prenota, quante volte deve tornare. L'ultima è la domanda vera — è il timore
+   che ferma la gente — e la risposta è una frase sua, non una promessa mia. */
+.scheda{
+  border:1px solid var(--bordo);background:var(--avorio);
+  padding:24px 26px 10px;margin-top:34px;
+}
+.scheda dl{margin:16px 0 0;}
+.scheda dl>div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:6px 20px;
+  flex-wrap:wrap;padding:13px 0;border-top:1px solid var(--bordo);
+}
+.scheda dt{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--inchiostro-soft);flex:none;
+}
+.scheda dd{margin:0;font-size:15.5px;text-align:right;max-width:34ch;margin-left:auto;}
+/* il riempimento è dentro il margine negativo: l'area da toccare arriva a
+   44 px come vuole un dito, ma la riga resta alta uguale */
+.scheda dd a{
+  display:inline-block;padding:11px 0;margin:-11px 0;
+  color:var(--accento);font-weight:600;
+  border-bottom:1px solid rgba(138,47,109,.34);
+}
+.scheda dd a:hover{border-bottom-color:var(--accento);}
+/* sul telefono la riga a due colonne si spezzava e il valore finiva sotto,
+   spinto a destra: l'occhio doveva tornare indietro a ogni riga. Etichetta
+   sopra, risposta sotto, tutto sul filo di sinistra. */
+@media (max-width:640px){
+  .scheda{padding:20px 20px 8px;}
+  .scheda dl>div{display:block;padding:14px 0;}
+  .scheda dd{text-align:left;max-width:none;margin-top:5px;}
+}
+.a-capo-largo{display:none;}
+@media (min-width:1150px){ .a-capo-largo{display:inline;} }
 
 /* ---- racconto a due colonne: foto + testo ---- */
 .narrativa{display:grid;grid-template-columns:1fr;gap:56px;align-items:center;}
@@ -484,11 +519,21 @@ section{position:relative;}
    Due foto vanno ancorate a mano, e solo qui — sul computer il riquadro ha
    la forma della foto e il centro va benissimo. */
 @media (max-width:859px){
+  /* Il riquadro quadrato è la stessa regola del computer applicata al
+     telefono: 390 x 390 contro una foto che a quella larghezza è alta 453,
+     quindi se ne perdono 63 px invece dei 133 di prima. Con un riquadro alto
+     320 la gamba di lui, sull'ultima foto, restava fuori per forza: nessun
+     object-position poteva salvarla, perché lo spazio non c'era.
+     min-height PRIMA di aspect-ratio: sugli iPhone vecchi vale solo la prima,
+     e comunque su uno schermo da 320 px viene 320x360, cioè quasi la forma
+     giusta lo stesso. */
+  .riga-foto{min-height:360px;aspect-ratio:1/1;}
   /* la testa era tagliata sopra: si mostra la parte alta */
   .riga-foto img.verso-alto{object-position:center top;}
-  /* si vedevano i palazzi e lui spariva in fondo: si mostra la parte bassa,
-     dove sta il movimento */
-  .riga-foto img.verso-basso{object-position:center 78%;}
+  /* qui il soggetto sta in basso — gamba distesa e scarpa — e sopra ci sono
+     solo palazzi: si tiene il fondo, e i 63 px che si perdono se li prende
+     il cielo */
+  .riga-foto img.verso-basso{object-position:center bottom;}
 }
 .riga:hover .riga-foto img{transform:scale(1.045);}
 @media (min-width:860px){
@@ -926,8 +971,39 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
   <div class="wrap">
     <div class="intro-sezione rv">
       <span class="label">Cosa faccio</span>
-      <h2>Il&nbsp;dolore si&nbsp;vede in&nbsp;un&nbsp;punto. Quasi mai&nbsp;comincia&nbsp;lì.</h2>
+      <!-- il "a capo" scritto a mano vale solo da 1150 in su, dove il titolo ha
+           tutta la larghezza: sotto, la riga è troppo stretta per reggerlo e
+           ci pensa text-wrap a spezzarla dove serve -->
+      <h2>Il&nbsp;dolore si&nbsp;fa&nbsp;sentire in&nbsp;un&nbsp;punto. <br class="a-capo-largo">Quasi mai&nbsp;comincia&nbsp;da&nbsp;lì.</h2>
       <p class="desc">Tre&nbsp;strumenti diversi, usati sulla stessa persona: quello che&nbsp;le&nbsp;mani non&nbsp;spiegano lo&nbsp;spiega la&nbsp;postura, e&nbsp;quello che&nbsp;la&nbsp;postura non&nbsp;spiega lo&nbsp;spiega il&nbsp;modo&nbsp;in&nbsp;cui&nbsp;ti&nbsp;muovi.</p>
+
+      <!-- MODIFICA QUI — appena Samuele risponde, qui vanno due righe in più,
+           che sono anche le due che la gente cerca per prime:
+             <div><dt>Quanto dura</dt><dd>MM minuti</dd></div>
+             <div><dt>Quanto costa</dt><dd>NN €&nbsp;a&nbsp;seduta</dd></div>
+           Il prezzo scritto in chiaro toglie il "costa troppo" prima che si
+           formi: è la riga che manca di più a tutta la pagina. -->
+      <aside class="scheda">
+        <h3 class="label">In pratica</h3>
+        <dl>
+          <div>
+            <dt>Dove</dt>
+            <dd><a href="https://maps.app.goo.gl/1hUwv4FbGWSb4bPD9" target="_blank" rel="noopener">Via&nbsp;Porta Romana&nbsp;15,&nbsp;Asti</a></dd>
+          </div>
+          <div>
+            <dt>Quando</dt>
+            <dd>Su appuntamento</dd>
+          </div>
+          <div>
+            <dt>Come prenoti</dt>
+            <dd><a href="#contatti" class="js-wa">Un messaggio su&nbsp;WhatsApp</a></dd>
+          </div>
+          <div>
+            <dt>Quante sedute</dt>
+            <dd>Poche, e&nbsp;ci&nbsp;si&nbsp;rivede solo&nbsp;se&nbsp;serve</dd>
+          </div>
+        </dl>
+      </aside>
     </div>
   </div>
 
