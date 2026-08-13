@@ -1299,10 +1299,18 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
     toastTimer = setTimeout(function(){ toastEl.classList.remove('mostra'); }, 2600);
   }
 
+  /* api.whatsapp.com/send e NON wa.me. Sembra la stessa cosa e non lo è:
+     wa.me è una pagina di passaggio che rimbalza al programma, e in quel
+     rimbalzo le emoji "nuove" si spezzano — chi apre il link si trova un
+     rombo con il punto interrogativo al posto della manina. Non è colpa del
+     file (i byte sono giusti) né del telefono: è il rimbalzo.
+     Stessa cosa era successa su Richard's Ranch, dove il cavallo diventava
+     un rombo, ed era stata sistemata così. */
   document.querySelectorAll('.js-wa').forEach(function(el){
     var testo = MESSAGGI[el.dataset.wa] || CFG.messaggio;
     if (CFG.whatsapp) {
-      el.href = 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(testo);
+      el.href = 'https://api.whatsapp.com/send?phone=' + CFG.whatsapp +
+                '&text=' + encodeURIComponent(testo);
       el.target = '_blank'; el.rel = 'noopener';
     } else {
       el.addEventListener('click', function(e){ e.preventDefault(); mostraToast('Dimostrazione · qui si apre WhatsApp'); });
