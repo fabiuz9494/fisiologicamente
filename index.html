@@ -389,14 +389,18 @@ section{position:relative;}
   #percorsi .intro-sezione{
     max-width:none;
     display:grid;
-    grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
-    column-gap:clamp(40px,5vw,78px);
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.72fr);
+    column-gap:clamp(36px,4vw,64px);
     align-items:start;
   }
+  /* la scheda sta A FIANCO, dalla prima riga: appesa sotto al testo lasciava
+     un quadrato di bianco in basso a sinistra, cioè lo stesso buco di prima
+     spostato di posto */
   #percorsi .intro-sezione .label,
-  #percorsi .intro-sezione h2{grid-column:1/-1;}
-  #percorsi .intro-sezione p.desc{grid-column:1;margin-top:26px;max-width:52ch;}
-  #percorsi .intro-sezione .scheda{grid-column:2;grid-row:3;margin-top:26px;}
+  #percorsi .intro-sezione h2,
+  #percorsi .intro-sezione p.desc{grid-column:1;}
+  #percorsi .intro-sezione p.desc{max-width:46ch;}
+  #percorsi .intro-sezione .scheda{grid-column:2;grid-row:1 / span 3;margin-top:0;}
 }
 
 /* ---- la scheda pratica ----
@@ -419,12 +423,14 @@ section{position:relative;}
 .scheda dd{margin:0;font-size:15.5px;text-align:right;max-width:34ch;margin-left:auto;}
 /* il riempimento è dentro il margine negativo: l'area da toccare arriva a
    44 px come vuole un dito, ma la riga resta alta uguale */
+/* niente sottolineatura: cadeva a un pelo dal filetto della riga sotto e le
+   due righe si sovrapponevano. Qui a dire che si tocca basta il viola, che
+   in tutta la pagina non è mai il colore del testo normale. */
 .scheda dd a{
   display:inline-block;padding:11px 0;margin:-11px 0;
   color:var(--accento);font-weight:600;
-  border-bottom:1px solid rgba(138,47,109,.34);
 }
-.scheda dd a:hover{border-bottom-color:var(--accento);}
+.scheda dd a:hover{color:var(--scuro-900);}
 /* sul telefono la riga a due colonne si spezzava e il valore finiva sotto,
    spinto a destra: l'occhio doveva tornare indietro a ogni riga. Etichetta
    sopra, risposta sotto, tutto sul filo di sinistra. */
@@ -974,7 +980,15 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
       <!-- il "a capo" scritto a mano vale solo da 1150 in su, dove il titolo ha
            tutta la larghezza: sotto, la riga è troppo stretta per reggerlo e
            ci pensa text-wrap a spezzarla dove serve -->
-      <h2>Il&nbsp;dolore si&nbsp;fa&nbsp;sentire in&nbsp;un&nbsp;punto. <br class="a-capo-largo">Quasi mai&nbsp;comincia&nbsp;da&nbsp;lì.</h2>
+      <!-- I due "a capo" cadono così apposta:
+             Il dolore si fa sentire
+             in un punto.
+             Quasi mai comincia da lì.
+           cioè una frase finisce e la successiva comincia sulla riga dopo.
+           Spezzare dopo il punto lasciando una parola sola in coda ("...in un
+           punto. Quasi / mai comincia da lì") è il difetto da evitare: la riga
+           sembra rotta invece che andata a capo. -->
+      <h2>Il&nbsp;dolore si&nbsp;fa&nbsp;sentire <br class="a-capo-largo">in&nbsp;un&nbsp;punto. <br class="a-capo-largo">Quasi&nbsp;mai comincia&nbsp;da&nbsp;lì.</h2>
       <p class="desc">Tre&nbsp;strumenti diversi, usati sulla stessa persona: quello che&nbsp;le&nbsp;mani non&nbsp;spiegano lo&nbsp;spiega la&nbsp;postura, e&nbsp;quello che&nbsp;la&nbsp;postura non&nbsp;spiega lo&nbsp;spiega il&nbsp;modo&nbsp;in&nbsp;cui&nbsp;ti&nbsp;muovi.</p>
 
       <!-- MODIFICA QUI — appena Samuele risponde, qui vanno due righe in più,
