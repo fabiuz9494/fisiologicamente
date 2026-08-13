@@ -1266,15 +1266,29 @@ footer{background:var(--scuro-900);color:rgba(253,250,251,.8);padding:64px 0 28p
   var CFG = {
     whatsapp: "393203660511",
     telefono: "+393203660511",
-    messaggio: "Ciao Samuele, ho visto il sito e vorrei prendere un appuntamento.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: "
+    messaggio: "Ciao Samuele 👋\nHo visto il tuo sito e vorrei fissare un appuntamento.\n\n📝 Mi chiamo: \n💬 Come sto: \n⏳ Da quanto: "
   };
 
   /* Messaggi diversi per pulsanti diversi: la chiave va in data-wa="".
-     Chi scrive dal pulsante di un percorso ha già metà messaggio pronto. */
+     Chi scrive dal pulsante di un percorso ha già metà messaggio pronto.
+
+     Tre cose, che sembrano dettagli e non lo sono:
+     · niente "disturbo" da nessuna parte. La prima riga che uno legge di se
+       stesso non deve essere la sua malattia: "Come sto" apre un discorso,
+       "Che disturbo ho" apre una cartella clinica;
+     · le tre righe da riempire stanno IN FONDO, perché WhatsApp mette il
+       cursore alla fine del testo: chi apre la chat si ritrova già dove deve
+       scrivere. Una firma sotto ("grazie, a presto") sposterebbe il cursore
+       via dai campi e costringerebbe a tornare su;
+     · le emoji sono tutte a codice singolo (👋 📝 💬 ⏳): niente varianti di
+       colore, niente unioni. Sono quelle che compaiono uguali su Android, su
+       iPhone e sul WhatsApp del computer. Le emoji "composte" (una faccia più
+       un colore di pelle, o una professione) su un telefono vecchio si
+       spezzano e si vedono i pezzi. */
   var MESSAGGI = {
-    osteopatia: "Ciao Samuele, vorrei prenotare una seduta di osteopatia.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: ",
-    postura:    "Ciao Samuele, vorrei prenotare una valutazione della postura.\n\nChe disturbo ho: \nDa quanto tempo: \nNome: ",
-    movimento:  "Ciao Samuele, vorrei parlarti di un problema di movimento.\n\nCosa succede: \nDa quanto tempo: \nNome: "
+    osteopatia: "Ciao Samuele 👋\nHo visto il tuo sito e vorrei prenotare una seduta di osteopatia.\n\n📝 Mi chiamo: \n💬 Come sto: \n⏳ Da quanto: ",
+    postura:    "Ciao Samuele 👋\nHo visto il tuo sito e vorrei prenotare una valutazione della postura.\n\n📝 Mi chiamo: \n💬 Come sto: \n⏳ Da quanto: ",
+    movimento:  "Ciao Samuele 👋\nHo visto il tuo sito e vorrei parlarti di come mi muovo.\n\n📝 Mi chiamo: \n💬 Come sto: \n⏳ Da quanto: "
   };
 
   var toastEl = document.getElementById('toast'), toastTimer = null;
